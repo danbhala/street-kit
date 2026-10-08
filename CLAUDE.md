@@ -11,9 +11,12 @@ Shared art for Tip the Can and Kerby. Read README.md first; its "one rule" decid
 - SpriteCook costs Dan's paid credits. Never spend without his yes for that batch: state the
   count and cost first, call `get_credit_balance` before and after, and report the spend.
   Never ask for the API key in chat or write it to a file; it comes from `SPRITECOOK_API_KEY`.
-- Follow the house settings in Tip the Can's `.claude/skills/tip-the-can-art/SKILL.md`, but
-  ask for "flat front elevation, seen straight-on, no ground, transparent background" instead
-  of its top-down wording.
+- To paint, use the `street-kit-art` skill (house settings, prompts per asset, costs, the
+  processing step). Then set the asset's `status` to `shipped`, fill `spritecook` and `since`,
+  and run `python3 tools/process_spritecook.py --check`.
+- The docs site (`site/`) is built from `manifest.json`; keep the manifest accurate and it
+  stays accurate. Check it locally with `python3 -m http.server` after copying `manifest.json`,
+  `CHANGELOG.md`, `art/` and `fonts/` next to `site/index.html` (the Pages workflow does this).
 - Every PR that changes what ships (art, fonts, manifest) adds a new `## [x.y.z]` section at
   the top of `CHANGELOG.md`; merging it publishes the release. Removing or renaming an asset,
   or changing its size or anchor, is a major version: say so in the PR and list which games
