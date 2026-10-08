@@ -4,7 +4,8 @@
     "project_id": "a15fc08b-1b06-4d31-a11b-e12f2be148f0",
     "model": "gemini-nano-banana-2.1",
     "style_asset_ids": [
-      "f2288672-913a-4a2e-9a9a-37b473507d60"
+      "f2288672-913a-4a2e-9a9a-37b473507d60",
+      "dea237b6-43e8-4104-acc2-c94451977ee7"
     ]
   },
   "games": {
@@ -137,16 +138,25 @@
           "path": "art/elevations/semi_house_pebble_dash.png",
           "mode": "fit_width",
           "width": 720,
-          "anchor": "bottom-centre"
+          "anchor": "bottom-centre",
+          "size": [
+            720,
+            829
+          ],
+          "sha12": "477e5dd09573",
+          "spritecook": {
+            "asset_id": "f05b901a-f949-4fa5-bb3d-531f9b440a4e",
+            "prompt": "The front of one 1930s British semi-detached house, the same house as the reference, but the whole front in cream pebble-dash render: white UPVC bay window with net curtains, hipped grey slate roof, chimney, white UPVC porch and front door. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         }
       ],
-      "notes": "Painted in Kerby's test batch (kerby-game art/street/house_semi.png). The pebble-dash variant is still to paint. Use this one as a second style reference for every elevation."
+      "notes": "Red brick painted in Kerby's test batch (kerby-game art/street/house_semi.png), shipped in 0.2.0; pebble-dash painted with it as the reference, shipped in 0.3.0. Use the red-brick one as a second style reference for every elevation."
     },
     {
       "id": "terrace_row",
       "name": "Terrace row front",
       "kind": "elevation",
-      "status": "planned",
+      "status": "shipped",
       "sketch": "terrace",
       "variants": [
         "terracotta brick",
@@ -160,10 +170,10 @@
         "tip-the-can": "Terraces in the backdrop band",
         "kerby": "\"Pick your house\"; Welsh terrace region later"
       },
-      "since": null,
+      "since": "0.3.0",
       "spritecook": {
-        "asset_id": null,
-        "prompt": null
+        "asset_id": "2fd15fa5-4202-4e6d-8b26-15f7bc67523e",
+        "prompt": "A row of Victorian British terraced houses in terracotta brick: white sash windows, front doors in different colours, grey slate roof with chimney stacks along the ridge. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
       },
       "outputs": [
         {
@@ -172,7 +182,16 @@
           "path": "art/elevations/terrace_row_brick.png",
           "mode": "strip",
           "width": 1024,
-          "anchor": "bottom-left"
+          "anchor": "bottom-left",
+          "size": [
+            1024,
+            696
+          ],
+          "sha12": "a069887f9fa4",
+          "spritecook": {
+            "asset_id": "2fd15fa5-4202-4e6d-8b26-15f7bc67523e",
+            "prompt": "A row of Victorian British terraced houses in terracotta brick: white sash windows, front doors in different colours, grey slate roof with chimney stacks along the ridge. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         },
         {
           "variant": "cream render",
@@ -180,7 +199,16 @@
           "path": "art/elevations/terrace_row_render.png",
           "mode": "strip",
           "width": 1024,
-          "anchor": "bottom-left"
+          "anchor": "bottom-left",
+          "size": [
+            1024,
+            742
+          ],
+          "sha12": "1e91fc1423e5",
+          "spritecook": {
+            "asset_id": "c9255fc0-a6d4-4a1c-93d6-e714fb4d03b2",
+            "prompt": "The same row of Victorian British terraced houses, but with cream-rendered fronts and painted window surrounds: white sash windows, front doors in different colours, grey slate roof with chimney stacks along the ridge. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         }
       ]
     },
@@ -188,7 +216,7 @@
       "id": "bungalow",
       "name": "Bungalow front",
       "kind": "elevation",
-      "status": "planned",
+      "status": "shipped",
       "sketch": "bungalow",
       "variants": [],
       "used_by": [
@@ -199,10 +227,10 @@
         "tip-the-can": "Backdrop variety",
         "kerby": "\"Pick your house\""
       },
-      "since": null,
+      "since": "0.3.0",
       "spritecook": {
-        "asset_id": null,
-        "prompt": null
+        "asset_id": "49688291-e3a3-4874-b01c-c9f8c37f4a22",
+        "prompt": "The front of one 1960s British bungalow: low hipped grey tiled roof, wide picture window, small porch, cream pebble-dash walls. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
       },
       "outputs": [
         {
@@ -211,7 +239,16 @@
           "path": "art/elevations/bungalow.png",
           "mode": "fit_width",
           "width": 720,
-          "anchor": "bottom-centre"
+          "anchor": "bottom-centre",
+          "size": [
+            720,
+            455
+          ],
+          "sha12": "b61c824a508a",
+          "spritecook": {
+            "asset_id": "49688291-e3a3-4874-b01c-c9f8c37f4a22",
+            "prompt": "The front of one 1960s British bungalow: low hipped grey tiled roof, wide picture window, small porch, cream pebble-dash walls. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         }
       ]
     },
@@ -219,7 +256,7 @@
       "id": "roofline",
       "name": "Roofline and chimneys strip",
       "kind": "elevation",
-      "status": "planned",
+      "status": "shipped",
       "sketch": "roofline",
       "variants": [
         "tileable"
@@ -232,10 +269,10 @@
         "tip-the-can": "Sky band above the play field",
         "kerby": "Far parallax layer"
       },
-      "since": null,
+      "since": "0.3.0",
       "spritecook": {
-        "asset_id": null,
-        "prompt": null
+        "asset_id": "7154a941-23a0-411f-8954-49bc34230cb8",
+        "prompt": "Distant British suburban rooftops and chimney pots as a silhouette band: grey slate roofs and terracotta brick chimney stacks with clay pots, slate and brick tones, no windows, no walls below the eaves. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
       },
       "outputs": [
         {
@@ -244,7 +281,16 @@
           "path": "art/elevations/roofline.png",
           "mode": "strip",
           "width": 1024,
-          "anchor": "bottom-left"
+          "anchor": "bottom-left",
+          "size": [
+            1024,
+            285
+          ],
+          "sha12": "8985dec4a815",
+          "spritecook": {
+            "asset_id": "7154a941-23a0-411f-8954-49bc34230cb8",
+            "prompt": "Distant British suburban rooftops and chimney pots as a silhouette band: grey slate roofs and terracotta brick chimney stacks with clay pots, slate and brick tones, no windows, no walls below the eaves. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         }
       ]
     },
@@ -252,7 +298,7 @@
       "id": "garden_wall",
       "name": "Brick garden wall with pillar",
       "kind": "elevation",
-      "status": "planned",
+      "status": "shipped",
       "sketch": "wall",
       "variants": [
         "tileable"
@@ -265,10 +311,10 @@
         "tip-the-can": "Front face of wall tiles",
         "kerby": "Garden line behind the pavement"
       },
-      "since": null,
+      "since": "0.3.0",
       "spritecook": {
-        "asset_id": null,
-        "prompt": null
+        "asset_id": "3bfc072d-45ab-4fac-9c69-91994def0da5",
+        "prompt": "A low red-brick British front-garden wall with a coping course of rounded bricks on top, about knee high. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
       },
       "outputs": [
         {
@@ -277,7 +323,16 @@
           "path": "art/elevations/garden_wall.png",
           "mode": "strip",
           "width": 512,
-          "anchor": "bottom-left"
+          "anchor": "bottom-left",
+          "size": [
+            512,
+            214
+          ],
+          "sha12": "ac5ed5354033",
+          "spritecook": {
+            "asset_id": "3bfc072d-45ab-4fac-9c69-91994def0da5",
+            "prompt": "A low red-brick British front-garden wall with a coping course of rounded bricks on top, about knee high. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         }
       ]
     },
@@ -285,7 +340,7 @@
       "id": "privet_hedge",
       "name": "Privet hedge front",
       "kind": "elevation",
-      "status": "planned",
+      "status": "shipped",
       "sketch": "hedge",
       "variants": [
         "tileable"
@@ -298,10 +353,10 @@
         "tip-the-can": "Front face of hedge tiles",
         "kerby": "Privet along front gardens"
       },
-      "since": null,
+      "since": "0.3.0",
       "spritecook": {
-        "asset_id": null,
-        "prompt": null
+        "asset_id": "93db7c1f-1b3d-4d6c-840c-83017691d1fe",
+        "prompt": "A neatly clipped British privet hedge, about waist high, with a flat top and flat front face of small dense leaves. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
       },
       "outputs": [
         {
@@ -310,7 +365,16 @@
           "path": "art/elevations/privet_hedge.png",
           "mode": "strip",
           "width": 512,
-          "anchor": "bottom-left"
+          "anchor": "bottom-left",
+          "size": [
+            512,
+            219
+          ],
+          "sha12": "aa2eca2bfeee",
+          "spritecook": {
+            "asset_id": "93db7c1f-1b3d-4d6c-840c-83017691d1fe",
+            "prompt": "A neatly clipped British privet hedge, about waist high, with a flat top and flat front face of small dense leaves. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         }
       ]
     },
@@ -354,7 +418,7 @@
       "id": "closeboard_fence",
       "name": "Close-board fence",
       "kind": "elevation",
-      "status": "planned",
+      "status": "shipped",
       "sketch": "fence",
       "variants": [
         "tileable"
@@ -367,10 +431,10 @@
         "tip-the-can": "Back-garden fences",
         "kerby": "Back gardens"
       },
-      "since": null,
+      "since": "0.3.0",
       "spritecook": {
-        "asset_id": null,
-        "prompt": null
+        "asset_id": "3335618d-f342-4de6-9e89-4355f4908d9c",
+        "prompt": "A close-board wooden British garden fence: vertical overlapping feather-edge boards between grey concrete posts, a concrete gravel board at the bottom. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
       },
       "outputs": [
         {
@@ -379,7 +443,16 @@
           "path": "art/elevations/closeboard_fence.png",
           "mode": "strip",
           "width": 512,
-          "anchor": "bottom-left"
+          "anchor": "bottom-left",
+          "size": [
+            512,
+            343
+          ],
+          "sha12": "cfad0b950820",
+          "spritecook": {
+            "asset_id": "3335618d-f342-4de6-9e89-4355f4908d9c",
+            "prompt": "A close-board wooden British garden fence: vertical overlapping feather-edge boards between grey concrete posts, a concrete gravel board at the bottom. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         }
       ]
     },
@@ -387,7 +460,7 @@
       "id": "garden_gates",
       "name": "Garden gates",
       "kind": "elevation",
-      "status": "planned",
+      "status": "shipped",
       "sketch": "gate",
       "variants": [
         "wooden",
@@ -401,10 +474,10 @@
         "tip-the-can": "Gaps in walls and hedges",
         "kerby": "Front gardens"
       },
-      "since": null,
+      "since": "0.3.0",
       "spritecook": {
-        "asset_id": null,
-        "prompt": null
+        "asset_id": "57ec28cc-fd4d-4ef7-98ec-f33607cbee1b",
+        "prompt": "2 separate British garden gates in a single row with wide empty space between them, not touching: on the left a white-painted wooden picket gate, on the right a black wrought-iron gate with simple scrollwork. Each gate on its own, closed, no posts or walls. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
       },
       "outputs": [
         {
@@ -415,7 +488,16 @@
           "count": 2,
           "index": 0,
           "width": 192,
-          "anchor": "bottom-centre"
+          "anchor": "bottom-centre",
+          "size": [
+            192,
+            204
+          ],
+          "sha12": "4df9f93489f4",
+          "spritecook": {
+            "asset_id": "57ec28cc-fd4d-4ef7-98ec-f33607cbee1b",
+            "prompt": "2 separate British garden gates in a single row with wide empty space between them, not touching: on the left a white-painted wooden picket gate, on the right a black wrought-iron gate with simple scrollwork. Each gate on its own, closed, no posts or walls. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         },
         {
           "variant": "iron",
@@ -425,7 +507,16 @@
           "count": 2,
           "index": 1,
           "width": 192,
-          "anchor": "bottom-centre"
+          "anchor": "bottom-centre",
+          "size": [
+            192,
+            213
+          ],
+          "sha12": "9b9d893d30ea",
+          "spritecook": {
+            "asset_id": "57ec28cc-fd4d-4ef7-98ec-f33607cbee1b",
+            "prompt": "2 separate British garden gates in a single row with wide empty space between them, not touching: on the left a white-painted wooden picket gate, on the right a black wrought-iron gate with simple scrollwork. Each gate on its own, closed, no posts or walls. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         }
       ]
     },
@@ -433,7 +524,7 @@
       "id": "lamp_post",
       "name": "Lamp post with sodium head",
       "kind": "elevation",
-      "status": "planned",
+      "status": "shipped",
       "sketch": "lamp",
       "variants": [
         "unlit",
@@ -447,10 +538,10 @@
         "tip-the-can": "Streetlights coming on at two-thirds of last light",
         "kerby": "Street prop and the lamppost bank shot"
       },
-      "since": null,
+      "since": "0.3.0",
       "spritecook": {
-        "asset_id": null,
-        "prompt": null
+        "asset_id": "b2eed692-3535-4ff6-9ed0-4c44c15c91e2",
+        "prompt": "One grey 1970s British concrete street lamp post: a tall tapering concrete column with a curved bracket arm at the top holding a sodium street lantern, the lantern unlit. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
       },
       "outputs": [
         {
@@ -459,7 +550,16 @@
           "path": "art/elevations/lamp_post_unlit.png",
           "mode": "fit_width",
           "width": 160,
-          "anchor": "bottom-centre"
+          "anchor": "bottom-centre",
+          "size": [
+            160,
+            617
+          ],
+          "sha12": "6c65dcb66912",
+          "spritecook": {
+            "asset_id": "b2eed692-3535-4ff6-9ed0-4c44c15c91e2",
+            "prompt": "One grey 1970s British concrete street lamp post: a tall tapering concrete column with a curved bracket arm at the top holding a sodium street lantern, the lantern unlit. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         },
         {
           "variant": "lit",
@@ -467,7 +567,16 @@
           "path": "art/elevations/lamp_post_lit.png",
           "mode": "fit_width",
           "width": 160,
-          "anchor": "bottom-centre"
+          "anchor": "bottom-centre",
+          "size": [
+            160,
+            638
+          ],
+          "sha12": "ae448ee709ab",
+          "spritecook": {
+            "asset_id": "e3720c65-bf8a-4857-aeb2-d855b6be2434",
+            "prompt": "The same grey 1970s British concrete street lamp post as the reference, identical shape, but its sodium lantern switched on and glowing warm amber #FFB347, a soft amber glow just around the lantern. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         }
       ]
     },
@@ -475,7 +584,7 @@
       "id": "garage_row",
       "name": "Lock-up garage row",
       "kind": "elevation",
-      "status": "planned",
+      "status": "shipped",
       "sketch": "garage",
       "variants": [
         "tileable"
@@ -488,10 +597,10 @@
         "tip-the-can": "\"Behind the Garages\" level and the street map",
         "kerby": "Background on later streets"
       },
-      "since": null,
+      "since": "0.3.0",
       "spritecook": {
-        "asset_id": null,
-        "prompt": null
+        "asset_id": "1c559a0e-f9d5-49db-9595-31cc82a4d6f3",
+        "prompt": "A row of British lock-up garages: flat concrete roofs, up-and-over metal garage doors painted in faded colours (faded blue, faded green, faded brown, faded red), brick piers between them. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
       },
       "outputs": [
         {
@@ -500,7 +609,16 @@
           "path": "art/elevations/garage_row.png",
           "mode": "strip",
           "width": 1024,
-          "anchor": "bottom-left"
+          "anchor": "bottom-left",
+          "size": [
+            1024,
+            258
+          ],
+          "sha12": "5f7f3b2d5a51",
+          "spritecook": {
+            "asset_id": "1c559a0e-f9d5-49db-9595-31cc82a4d6f3",
+            "prompt": "A row of British lock-up garages: flat concrete roofs, up-and-over metal garage doors painted in faded colours (faded blue, faded green, faded brown, faded red), brick piers between them. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         }
       ]
     },
@@ -508,7 +626,7 @@
       "id": "street_trees",
       "name": "Street trees",
       "kind": "elevation",
-      "status": "planned",
+      "status": "shipped",
       "sketch": "tree",
       "variants": [
         "laburnum",
@@ -522,10 +640,10 @@
         "tip-the-can": "Title and map dressing",
         "kerby": "Near and mid parallax"
       },
-      "since": null,
+      "since": "0.3.0",
       "spritecook": {
-        "asset_id": null,
-        "prompt": null
+        "asset_id": "314a4edb-3757-484a-973b-950b13bbace4",
+        "prompt": "One laburnum street tree in full yellow bloom, long hanging chains of yellow flowers, slim trunk. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
       },
       "outputs": [
         {
@@ -534,7 +652,16 @@
           "path": "art/elevations/tree_laburnum.png",
           "mode": "fit_width",
           "width": 512,
-          "anchor": "bottom-centre"
+          "anchor": "bottom-centre",
+          "size": [
+            512,
+            618
+          ],
+          "sha12": "114732345c06",
+          "spritecook": {
+            "asset_id": "314a4edb-3757-484a-973b-950b13bbace4",
+            "prompt": "One laburnum street tree in full yellow bloom, long hanging chains of yellow flowers, slim trunk. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         },
         {
           "variant": "lime",
@@ -542,7 +669,16 @@
           "path": "art/elevations/tree_lime.png",
           "mode": "fit_width",
           "width": 512,
-          "anchor": "bottom-centre"
+          "anchor": "bottom-centre",
+          "size": [
+            512,
+            780
+          ],
+          "sha12": "f4b44cc57f80",
+          "spritecook": {
+            "asset_id": "32a60ecb-3716-4fa9-af81-981d9940d549",
+            "prompt": "One lime (linden) street tree in full summer leaf, tall rounded crown of heart-shaped leaves, straight trunk. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         }
       ]
     },
@@ -550,7 +686,7 @@
       "id": "ice_cream_van",
       "name": "Ice-cream van, side-on",
       "kind": "elevation",
-      "status": "planned",
+      "status": "shipped",
       "sketch": "van",
       "variants": [],
       "used_by": [
@@ -561,10 +697,10 @@
         "tip-the-can": "Map and title dressing",
         "kerby": "CAR! interrupt and the tip jar"
       },
-      "since": null,
+      "since": "0.3.0",
       "spritecook": {
-        "asset_id": null,
-        "prompt": null
+        "asset_id": "749442f4-9fac-41db-baea-852d44c1b371",
+        "prompt": "One 1990s British ice-cream van seen exactly side-on: cream body with pastel pink and pastel blue livery stripes, a serving hatch on the side, a big plastic ice-cream cone on the roof, no brand names, no text, no lettering anywhere. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
       },
       "outputs": [
         {
@@ -573,7 +709,16 @@
           "path": "art/elevations/ice_cream_van.png",
           "mode": "fit_width",
           "width": 640,
-          "anchor": "bottom-centre"
+          "anchor": "bottom-centre",
+          "size": [
+            640,
+            448
+          ],
+          "sha12": "24f35080f1f8",
+          "spritecook": {
+            "asset_id": "749442f4-9fac-41db-baea-852d44c1b371",
+            "prompt": "One 1990s British ice-cream van seen exactly side-on: cream body with pastel pink and pastel blue livery stripes, a serving hatch on the side, a big plastic ice-cream cone on the roof, no brand names, no text, no lettering anywhere. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         }
       ]
     },
@@ -581,7 +726,7 @@
       "id": "corner_shop",
       "name": "Corner shop front",
       "kind": "elevation",
-      "status": "planned",
+      "status": "shipped",
       "sketch": "shop",
       "variants": [],
       "used_by": [
@@ -592,10 +737,10 @@
         "tip-the-can": "Street map landmark",
         "kerby": "Shop screen backdrop"
       },
-      "since": null,
+      "since": "0.3.0",
       "spritecook": {
-        "asset_id": null,
-        "prompt": null
+        "asset_id": "842ce5ce-33ca-48e7-980f-08caa72e9d71",
+        "prompt": "The front of one British corner shop in a brick building: a striped canvas awning over the shop window, a window with colourful posters that have no readable text, a shop door, and a flat above with two windows. No signs with letters, no text anywhere. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
       },
       "outputs": [
         {
@@ -604,7 +749,16 @@
           "path": "art/elevations/corner_shop.png",
           "mode": "fit_width",
           "width": 720,
-          "anchor": "bottom-centre"
+          "anchor": "bottom-centre",
+          "size": [
+            720,
+            940
+          ],
+          "sha12": "d357c3ebba7d",
+          "spritecook": {
+            "asset_id": "842ce5ce-33ca-48e7-980f-08caa72e9d71",
+            "prompt": "The front of one British corner shop in a brick building: a striped canvas awning over the shop window, a window with colourful posters that have no readable text, a shop door, and a flat above with two windows. No signs with letters, no text anywhere. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+          }
         }
       ]
     },
