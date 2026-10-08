@@ -84,6 +84,41 @@
         ]
       },
       "notes": "One half of a pair with its own hipped roof; mirroring it for the other half leaves a notch between the roofs. A true pair would need a new generation."
+    },
+    {
+      "name": "far_roofs",
+      "label": "Distant suburban roofline silhouette, seamless left to right",
+      "asset_id": "f630c15f-8f26-4678-9583-acc11c9875a8",
+      "prompt": "A long row of distant British suburban rooftops seen from far away: pitched roofs, chimney stacks with pots, TV aerials, a satellite dish and a few rounded tree crowns, painted as one flat soft silhouette band in muted dusky mauve with only very faint lighter edges where the low sun catches the roof ridges, no windows, no detail, no outlines. Front elevation, a straight horizontal strip filling the width, ends cut square, flat bottom edge. No ground, no sky, no cast shadow.",
+      "style": "flat gouache picture-book illustration matching the style reference: soft-edged flat colour fills with visible brush texture, one painted shadow shape on the right, warm apricot golden-hour light from a low sun on the left, no black outlines",
+      "colors": [
+        "#8A6F8F",
+        "#9D84A0",
+        "#B9A3D6",
+        "#F6C08E"
+      ],
+      "aspect_ratio": "16:9",
+      "credits": 12,
+      "generated": "2026-10-08",
+      "generated_for": "kerby",
+      "outputs": [
+        "art/elevations/far_roofs.png"
+      ],
+      "size": {
+        "art/elevations/far_roofs.png": [
+          1006,
+          197
+        ]
+      },
+      "sha12": {
+        "art/elevations/far_roofs.png": "7ad4487eed4b"
+      },
+      "used_by": {
+        "art/elevations/far_roofs.png": [
+          "kerby"
+        ]
+      },
+      "notes": "Flat muted-mauve silhouette with faint warm ridge highlights; fill below it with its own bottom-edge colour. Kerby uses it on the sky parallax layer; Tip the Can could use it in its sky band or title screen, graded to dusk."
     }
   ]
 }
