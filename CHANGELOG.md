@@ -9,6 +9,17 @@ Versioning for art:
 - **Minor**: new assets added. Safe to upgrade.
 - **Patch**: an existing asset repainted with the same file name, size and anchor. Safe to upgrade.
 
+## [0.3.0]
+
+- Painted the rest of the planned kit (16 assets, 17 files, all front elevations):
+  - Houses and backdrop: pebble-dash semi, brick and rendered terrace rows, bungalow, roofline.
+  - Street furniture: garden wall, privet hedge, close-board fence, wooden and iron gates, lamp
+    post (unlit and lit), lock-up garage row.
+  - Dressing: laburnum and lime street trees, ice-cream van, corner shop.
+- Strips (terraces, roofline, wall, hedge, fence, garages) tile left to right.
+- Each new output records its own SpriteCook asset id and prompt in `manifest.json`.
+- Not in this release: the ground decals (hopscotch, drain cover, puddle) are still planned.
+
 ## [0.2.0]
 
 - First paintings: the red-brick semi-detached house front (painted in Kerby's test batch) and
