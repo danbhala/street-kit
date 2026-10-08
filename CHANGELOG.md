@@ -9,6 +9,12 @@ Versioning for art:
 - **Minor**: new assets added. Safe to upgrade.
 - **Patch**: an existing asset repainted with the same file name, size and anchor. Safe to upgrade.
 
+## [0.4.0]
+
+- Ground decals: hopscotch (chalk on a patch of paving slabs), cast-iron drain cover and puddle,
+  in `art/decals/`. This completes the planned kit.
+- Known flaw: the hopscotch numbers repeat 7 where the right-hand square should be 8.
+
 ## [0.3.0]
 
 - Painted the rest of the planned kit (16 assets, 17 files, all front elevations):
@@ -18,7 +24,7 @@ Versioning for art:
   - Dressing: laburnum and lime street trees, ice-cream van, corner shop.
 - Strips (terraces, roofline, wall, hedge, fence, garages) tile left to right.
 - Each new output records its own SpriteCook asset id and prompt in `manifest.json`.
-- Not in this release: the ground decals (hopscotch, drain cover, puddle) are still planned.
+- Not in this release: the ground decals (hopscotch, drain cover, puddle), which ship in 0.4.0.
 
 ## [0.2.0]
 
