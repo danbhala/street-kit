@@ -1,13 +1,709 @@
 {
-  "about": "Every shared Street Kit asset. Re-download a source with SpriteCook get_asset_metadata(asset_id).sprite_url. used_by lists the games that use each output.",
+  "about": "Every shared Street Kit asset, planned and painted. The docs site (https://danbhala.github.io/street-kit/) is built from this file. When an asset is painted: set status to 'shipped', fill spritecook and outputs, and set since to the release it ships in.",
   "spritecook": {
     "project_id": "a15fc08b-1b06-4d31-a11b-e12f2be148f0",
     "model": "gemini-nano-banana-2.1",
-    "style_asset_ids": ["f2288672-913a-4a2e-9a9a-37b473507d60"]
+    "style_asset_ids": [
+      "f2288672-913a-4a2e-9a9a-37b473507d60"
+    ]
   },
   "games": {
     "tip-the-can": "https://github.com/danbhala/tip-the-can-game",
     "kerby": "https://github.com/danbhala/kerby-game"
   },
-  "assets": []
+  "palette": [
+    {
+      "name": "Ink",
+      "hex": "#1B1F3B",
+      "use": "Outlines on characters, text on light cards"
+    },
+    {
+      "name": "Dusk deep",
+      "hex": "#2B3A67",
+      "use": "Cast shadows (multiply 40–55%), dusk panels"
+    },
+    {
+      "name": "Dusk mid",
+      "hex": "#4A5A8F",
+      "use": "Shadowed ground, far rooflines"
+    },
+    {
+      "name": "Indigo sky",
+      "hex": "#2A2858",
+      "use": "Full dark, end of last light"
+    },
+    {
+      "name": "Peach sky",
+      "hex": "#F6B48F",
+      "use": "Golden-hour sky, sun-side rim light"
+    },
+    {
+      "name": "Sodium amber",
+      "hex": "#FFB347",
+      "use": "Streetlights, primary buttons"
+    },
+    {
+      "name": "Lamp white",
+      "hex": "#FFF4DC",
+      "use": "Lamp heads, lit windows"
+    },
+    {
+      "name": "Chalk",
+      "hex": "#F3EEE2",
+      "use": "Chalk lettering, text on dusk"
+    },
+    {
+      "name": "Cream render",
+      "hex": "#EADBC0",
+      "use": "Rendered walls, sills, cards"
+    },
+    {
+      "name": "Brick",
+      "hex": "#B8614A",
+      "use": "Terraces and semis (Kerby's #B5533C is the same family)"
+    },
+    {
+      "name": "Brick shade",
+      "hex": "#7E3F3A",
+      "use": "Brick in shadow, roof ridges"
+    },
+    {
+      "name": "Fence wood",
+      "hex": "#8C6A4A",
+      "use": "Fences, gates, sheds"
+    },
+    {
+      "name": "Hedge",
+      "hex": "#3E6B4A",
+      "use": "Privet and hedges"
+    },
+    {
+      "name": "Hedge lit",
+      "hex": "#6E9460",
+      "use": "Sun-side leaves, lawns"
+    },
+    {
+      "name": "Kerb",
+      "hex": "#E6DCCB",
+      "use": "Kerbstones; Kerby's hit-zone highlight"
+    },
+    {
+      "name": "Tarmac",
+      "hex": "#4F5A66",
+      "use": "Road surface"
+    }
+  ],
+  "assets": [
+    {
+      "id": "semi_house",
+      "name": "Semi-detached house front",
+      "kind": "elevation",
+      "status": "shipped",
+      "sketch": "house",
+      "variants": [
+        "red brick",
+        "pebble-dash"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Backdrop band, street map, title screen",
+        "kerby": "Mid parallax layer and \"pick your house\""
+      },
+      "since": "0.2.0",
+      "spritecook": {
+        "asset_id": "dea237b6-43e8-4104-acc2-c94451977ee7",
+        "prompt": "The front of one red-brick 1930s British semi-detached house seen straight-on from the street, flat front elevation, side-on, not angled: hipped grey slate roof with a chimney, white UPVC bay window with net curtains downstairs, a window upstairs with pebble-dash panel, white UPVC porch and front door, a satellite dish on the wall. Only this one house, no ground, no garden, no people."
+      },
+      "outputs": [
+        {
+          "variant": "red brick",
+          "raw": "semi_house_red_brick",
+          "path": "art/elevations/semi_house_red_brick.png",
+          "mode": "fit_width",
+          "width": 720,
+          "size": [
+            720,
+            829
+          ],
+          "anchor": "bottom-centre",
+          "sha12": "9a4b12e76f3f"
+        },
+        {
+          "variant": "pebble-dash",
+          "raw": "semi_house_pebble_dash",
+          "path": "art/elevations/semi_house_pebble_dash.png",
+          "mode": "fit_width",
+          "width": 720,
+          "anchor": "bottom-centre"
+        }
+      ],
+      "notes": "Painted in Kerby's test batch (kerby-game art/street/house_semi.png). The pebble-dash variant is still to paint. Use this one as a second style reference for every elevation."
+    },
+    {
+      "id": "terrace_row",
+      "name": "Terrace row front",
+      "kind": "elevation",
+      "status": "planned",
+      "sketch": "terrace",
+      "variants": [
+        "terracotta brick",
+        "cream render"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Terraces in the backdrop band",
+        "kerby": "\"Pick your house\"; Welsh terrace region later"
+      },
+      "since": null,
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "variant": "terracotta brick",
+          "raw": "terrace_row_brick",
+          "path": "art/elevations/terrace_row_brick.png",
+          "mode": "strip",
+          "width": 1024,
+          "anchor": "bottom-left"
+        },
+        {
+          "variant": "cream render",
+          "raw": "terrace_row_render",
+          "path": "art/elevations/terrace_row_render.png",
+          "mode": "strip",
+          "width": 1024,
+          "anchor": "bottom-left"
+        }
+      ]
+    },
+    {
+      "id": "bungalow",
+      "name": "Bungalow front",
+      "kind": "elevation",
+      "status": "planned",
+      "sketch": "bungalow",
+      "variants": [],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Backdrop variety",
+        "kerby": "\"Pick your house\""
+      },
+      "since": null,
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "variant": null,
+          "raw": "bungalow",
+          "path": "art/elevations/bungalow.png",
+          "mode": "fit_width",
+          "width": 720,
+          "anchor": "bottom-centre"
+        }
+      ]
+    },
+    {
+      "id": "roofline",
+      "name": "Roofline and chimneys strip",
+      "kind": "elevation",
+      "status": "planned",
+      "sketch": "roofline",
+      "variants": [
+        "tileable"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Sky band above the play field",
+        "kerby": "Far parallax layer"
+      },
+      "since": null,
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "variant": "tileable",
+          "raw": "roofline",
+          "path": "art/elevations/roofline.png",
+          "mode": "strip",
+          "width": 1024,
+          "anchor": "bottom-left"
+        }
+      ]
+    },
+    {
+      "id": "garden_wall",
+      "name": "Brick garden wall with pillar",
+      "kind": "elevation",
+      "status": "planned",
+      "sketch": "wall",
+      "variants": [
+        "tileable"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Front face of wall tiles",
+        "kerby": "Garden line behind the pavement"
+      },
+      "since": null,
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "variant": "tileable",
+          "raw": "garden_wall",
+          "path": "art/elevations/garden_wall.png",
+          "mode": "strip",
+          "width": 512,
+          "anchor": "bottom-left"
+        }
+      ]
+    },
+    {
+      "id": "privet_hedge",
+      "name": "Privet hedge front",
+      "kind": "elevation",
+      "status": "planned",
+      "sketch": "hedge",
+      "variants": [
+        "tileable"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Front face of hedge tiles",
+        "kerby": "Privet along front gardens"
+      },
+      "since": null,
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "variant": "tileable",
+          "raw": "privet_hedge",
+          "path": "art/elevations/privet_hedge.png",
+          "mode": "strip",
+          "width": 512,
+          "anchor": "bottom-left"
+        }
+      ]
+    },
+    {
+      "id": "picket_fence",
+      "name": "Picket fence",
+      "kind": "elevation",
+      "status": "shipped",
+      "sketch": "fence",
+      "variants": [
+        "tileable"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Front face of fence tiles",
+        "kerby": "Front-garden fences"
+      },
+      "since": "0.2.0",
+      "spritecook": {
+        "asset_id": "5e9254f7-9a89-42fc-b628-16880549e959",
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "variant": "picket",
+          "path": "art/elevations/picket_fence.png",
+          "size": [
+            114,
+            128
+          ],
+          "anchor": "bottom-left",
+          "sha12": "2f7cc56022f7"
+        }
+      ],
+      "notes": "Painted for Tip the Can (tip-the-can-game art/tilesets/fence.png); Kerby already uses a copy."
+    },
+    {
+      "id": "closeboard_fence",
+      "name": "Close-board fence",
+      "kind": "elevation",
+      "status": "planned",
+      "sketch": "fence",
+      "variants": [
+        "tileable"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Back-garden fences",
+        "kerby": "Back gardens"
+      },
+      "since": null,
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "variant": "tileable",
+          "raw": "closeboard_fence",
+          "path": "art/elevations/closeboard_fence.png",
+          "mode": "strip",
+          "width": 512,
+          "anchor": "bottom-left"
+        }
+      ]
+    },
+    {
+      "id": "garden_gates",
+      "name": "Garden gates",
+      "kind": "elevation",
+      "status": "planned",
+      "sketch": "gate",
+      "variants": [
+        "wooden",
+        "iron"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Gaps in walls and hedges",
+        "kerby": "Front gardens"
+      },
+      "since": null,
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "variant": "wooden",
+          "raw": "gates_sheet",
+          "path": "art/elevations/gate_wooden.png",
+          "mode": "slice",
+          "count": 2,
+          "index": 0,
+          "width": 192,
+          "anchor": "bottom-centre"
+        },
+        {
+          "variant": "iron",
+          "raw": "gates_sheet",
+          "path": "art/elevations/gate_iron.png",
+          "mode": "slice",
+          "count": 2,
+          "index": 1,
+          "width": 192,
+          "anchor": "bottom-centre"
+        }
+      ]
+    },
+    {
+      "id": "lamp_post",
+      "name": "Lamp post with sodium head",
+      "kind": "elevation",
+      "status": "planned",
+      "sketch": "lamp",
+      "variants": [
+        "unlit",
+        "lit"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Streetlights coming on at two-thirds of last light",
+        "kerby": "Street prop and the lamppost bank shot"
+      },
+      "since": null,
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "variant": "unlit",
+          "raw": "lamp_post_unlit",
+          "path": "art/elevations/lamp_post_unlit.png",
+          "mode": "fit_width",
+          "width": 160,
+          "anchor": "bottom-centre"
+        },
+        {
+          "variant": "lit",
+          "raw": "lamp_post_lit",
+          "path": "art/elevations/lamp_post_lit.png",
+          "mode": "fit_width",
+          "width": 160,
+          "anchor": "bottom-centre"
+        }
+      ]
+    },
+    {
+      "id": "garage_row",
+      "name": "Lock-up garage row",
+      "kind": "elevation",
+      "status": "planned",
+      "sketch": "garage",
+      "variants": [
+        "tileable"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "\"Behind the Garages\" level and the street map",
+        "kerby": "Background on later streets"
+      },
+      "since": null,
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "variant": "tileable",
+          "raw": "garage_row",
+          "path": "art/elevations/garage_row.png",
+          "mode": "strip",
+          "width": 1024,
+          "anchor": "bottom-left"
+        }
+      ]
+    },
+    {
+      "id": "street_trees",
+      "name": "Street trees",
+      "kind": "elevation",
+      "status": "planned",
+      "sketch": "tree",
+      "variants": [
+        "laburnum",
+        "lime"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Title and map dressing",
+        "kerby": "Near and mid parallax"
+      },
+      "since": null,
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "variant": "laburnum",
+          "raw": "tree_laburnum",
+          "path": "art/elevations/tree_laburnum.png",
+          "mode": "fit_width",
+          "width": 512,
+          "anchor": "bottom-centre"
+        },
+        {
+          "variant": "lime",
+          "raw": "tree_lime",
+          "path": "art/elevations/tree_lime.png",
+          "mode": "fit_width",
+          "width": 512,
+          "anchor": "bottom-centre"
+        }
+      ]
+    },
+    {
+      "id": "ice_cream_van",
+      "name": "Ice-cream van, side-on",
+      "kind": "elevation",
+      "status": "planned",
+      "sketch": "van",
+      "variants": [],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Map and title dressing",
+        "kerby": "CAR! interrupt and the tip jar"
+      },
+      "since": null,
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "variant": null,
+          "raw": "ice_cream_van",
+          "path": "art/elevations/ice_cream_van.png",
+          "mode": "fit_width",
+          "width": 640,
+          "anchor": "bottom-centre"
+        }
+      ]
+    },
+    {
+      "id": "corner_shop",
+      "name": "Corner shop front",
+      "kind": "elevation",
+      "status": "planned",
+      "sketch": "shop",
+      "variants": [],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Street map landmark",
+        "kerby": "Shop screen backdrop"
+      },
+      "since": null,
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "variant": null,
+          "raw": "corner_shop",
+          "path": "art/elevations/corner_shop.png",
+          "mode": "fit_width",
+          "width": 720,
+          "anchor": "bottom-centre"
+        }
+      ]
+    },
+    {
+      "id": "ground_decals",
+      "name": "Ground decals: hopscotch, drain cover, puddle",
+      "kind": "decal",
+      "status": "planned",
+      "sketch": "decals",
+      "variants": [
+        "hopscotch",
+        "drain cover",
+        "puddle"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Ground decals",
+        "kerby": "Pavement and road decals, foreshortened"
+      },
+      "since": null,
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "variant": "hopscotch",
+          "raw": "decals_sheet",
+          "path": "art/decals/hopscotch.png",
+          "mode": "slice",
+          "count": 3,
+          "index": 0,
+          "width": 256,
+          "anchor": "centre"
+        },
+        {
+          "variant": "drain cover",
+          "raw": "decals_sheet",
+          "path": "art/decals/drain_cover.png",
+          "mode": "slice",
+          "count": 3,
+          "index": 1,
+          "width": 256,
+          "anchor": "centre"
+        },
+        {
+          "variant": "puddle",
+          "raw": "decals_sheet",
+          "path": "art/decals/puddle.png",
+          "mode": "slice",
+          "count": 3,
+          "index": 2,
+          "width": 256,
+          "anchor": "centre"
+        }
+      ]
+    },
+    {
+      "id": "fonts",
+      "name": "Fredoka and Cabin Sketch Bold",
+      "kind": "font",
+      "status": "shipped",
+      "sketch": "shop",
+      "variants": [],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Fredoka for body and buttons; Cabin Sketch for chalk lettering",
+        "kerby": "Same, copied from Tip the Can"
+      },
+      "since": "0.2.0",
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "path": "fonts/Fredoka.ttf",
+          "sha12": "2ba02e68b152"
+        },
+        {
+          "path": "fonts/OFL-Fredoka.txt",
+          "sha12": "5c9e7eee5c6b"
+        },
+        {
+          "path": "fonts/CabinSketch-Bold.ttf",
+          "sha12": "0961688037b9"
+        },
+        {
+          "path": "fonts/OFL-CabinSketch.txt",
+          "sha12": "f6fc9fbae062"
+        }
+      ],
+      "notes": "SIL Open Font License; the licence files ship with the fonts."
+    }
+  ]
 }

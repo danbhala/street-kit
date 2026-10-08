@@ -27,11 +27,26 @@ Characters and UI stay in each game too.
 
 - SpriteCook project `a15fc08b-1b06-4d31-a11b-e12f2be148f0`, model `gemini-nano-banana-2.1`,
   `pixel=false`, 1K.
-- Style reference: Tip the Can's hero kid, asset `f2288672-913a-4a2e-9a9a-37b473507d60`.
-- Light: low warm sun from the upper left (golden hour). Tip the Can's last-light shader takes
-  it to dusk; Kerby uses it as is.
-- No black outlines on environment art. One painted shadow shape, lower right.
-- Authored at 128 px per Tip the Can tile.
+- Style references: Tip the Can's hero kid (`f2288672-913a-4a2e-9a9a-37b473507d60`) and,
+  for elevations, the red-brick semi (`dea237b6-43e8-4104-acc2-c94451977ee7`).
+- Light: neutral warm daylight from the upper left, no baked time of day. Each game grades it:
+  Kerby with its golden-hour modulate, Tip the Can with its last-light tint.
+- No baked cast shadow, only a soft self-shadow on the right; each game draws its own shadow.
+  No black outlines.
+- Shared palette hexes for shared materials (listed in `manifest.json`).
+
+These rules match section 9 of Kerby's `ART_DIRECTION.md`.
+
+Docs site: **https://danbhala.github.io/street-kit/** (built from `manifest.json` on every
+merge to main).
+
+## Painting new assets
+
+This repo has the SpriteCook connection (`.mcp.json`, key from `SPRITECOOK_API_KEY`) and the
+`street-kit-art` skill, so a Claude session here can paint the kit directly. Every planned
+asset in `manifest.json` already has its output files listed; paint the raw, then run
+`python3 tools/process_spritecook.py <raw_dir>`, which writes the files and fills in sizes and
+hashes. `python3 tools/process_spritecook.py --check` verifies every shipped file.
 
 ## Layout
 
