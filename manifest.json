@@ -119,6 +119,142 @@
         ]
       },
       "notes": "Flat muted-mauve silhouette with faint warm ridge highlights; fill below it with its own bottom-edge colour. Kerby uses it on the sky parallax layer; Tip the Can could use it in its sky band or title screen, graded to dusk."
+    },
+    {
+      "name": "car_escort",
+      "label": "Escort look-alike hatchback, side elevation facing right",
+      "asset_id": "3535f05e-1af8-46ba-88a8-4fcb3293c927",
+      "prompt": "One 1990s British family hatchback car, a generic Ford Escort look-alike with no badges, seen exactly side-on facing right: faded cherry-red paint, black plastic bumpers and trims, grey hubcaps, windows showing a hint of the empty seats inside, no driver, no number plate, no text, no lettering anywhere. Side elevation, seen straight-on from the pavement, flat, not angled. Only this car, no ground, no road, no people, no cast shadow, transparent background.",
+      "style": "flat gouache picture-book illustration matching the style reference: soft-edged flat colour fills with visible brush texture, one painted shadow shape on the right, warm apricot golden-hour light from a low sun on the left, no black outlines",
+      "colors": [
+        "#9E4B40",
+        "#7E3F3A",
+        "#2E3036",
+        "#8FA3B8",
+        "#C9C2BA",
+        "#F6C08E"
+      ],
+      "aspect_ratio": "16:9",
+      "credits": 12,
+      "generated": "2026-10-08",
+      "generated_for": "kerby",
+      "outputs": [
+        "art/elevations/car_escort.png"
+      ],
+      "size": {
+        "art/elevations/car_escort.png": [
+          520,
+          217
+        ]
+      },
+      "sha12": {
+        "art/elevations/car_escort.png": "b41a3036b092"
+      },
+      "used_by": {
+        "art/elevations/car_escort.png": [
+          "kerby"
+        ]
+      },
+      "notes": "Side elevation for a car crossing the road side-on (Kerby's CAR!). Muted 12% in processing to stay under Kerby's saturation budget. Tip the Can would need its own top view of a car; this one suits side-on games and title art."
+    },
+    {
+      "name": "kerb_concrete",
+      "label": "Concrete kerb section, side-on, seamless left to right",
+      "asset_id": "f8fa8d5b-6d51-4056-a4a0-c80eda04e937",
+      "prompt": "The same straight section of kerb as the reference image, same layout and proportions (a thin strip of paving slabs on top, the kerb, a narrow strip of dark tarmac gutter at the bottom), but made of British precast concrete kerb units instead of granite: smoother, paler, even grey-cream concrete with thin straight joints between short units, a softer more rounded top front edge with a gentler highlight along it, the vertical front face in soft shade. Runs straight across the whole frame, horizontal, ends cut square, no objects, no people.",
+      "style": "flat gouache picture-book illustration matching the style reference: soft-edged flat colour fills with visible brush texture, one painted shadow shape on the right, warm apricot golden-hour light from a low sun on the left, no black outlines",
+      "colors": [
+        "#D9D4CB",
+        "#C9BFB2",
+        "#B8B2A6",
+        "#4F5A66",
+        "#FFFAF0"
+      ],
+      "aspect_ratio": "16:9",
+      "edit_asset_id": "9f885e14-aa70-4892-bde7-c1e88470e20e",
+      "credits": 12,
+      "generated": "2026-10-08",
+      "generated_for": "kerby",
+      "outputs": [
+        "art/elevations/kerb_concrete.png"
+      ],
+      "size": {
+        "art/elevations/kerb_concrete.png": [
+          512,
+          160
+        ]
+      },
+      "sha12": {
+        "art/elevations/kerb_concrete.png": "46b2f8a16623"
+      },
+      "used_by": {
+        "art/elevations/kerb_concrete.png": [
+          "kerby"
+        ]
+      },
+      "notes": "An edit of kerb_granite with the same layout: in Kerby's 512 px strip the arris is at row 64 and the face foot at row 125 (granite: 66 and 129). Paler, softer top edge."
+    },
+    {
+      "name": "kerb_dropped",
+      "label": "Dropped kerb at a driveway, side-on, seamless left to right",
+      "asset_id": "a99367f6-8989-4915-a99c-47de7bd1046e",
+      "prompt": "The same straight section of kerb as the reference image, same layout, but a British dropped kerb at a driveway: the kerb stones are lowered almost flush with the road so only a very low sliver of front face shows, the paving slabs slope gently down to it, a faint highlight along the low top edge, a narrow strip of dark tarmac gutter at the bottom. Runs straight across the whole frame, horizontal, ends cut square, no ramps at the ends, no objects, no people.",
+      "style": "flat gouache picture-book illustration matching the style reference: soft-edged flat colour fills with visible brush texture, one painted shadow shape on the right, warm apricot golden-hour light from a low sun on the left, no black outlines",
+      "colors": [
+        "#E6DCCB",
+        "#C9BFB2",
+        "#B3A893",
+        "#4F5A66",
+        "#FFFAF0"
+      ],
+      "aspect_ratio": "16:9",
+      "edit_asset_id": "9f885e14-aa70-4892-bde7-c1e88470e20e",
+      "credits": 12,
+      "generated": "2026-10-08",
+      "generated_for": "kerby",
+      "outputs": [
+        "art/elevations/kerb_dropped.png"
+      ],
+      "size": {
+        "art/elevations/kerb_dropped.png": [
+          512,
+          168
+        ]
+      },
+      "sha12": {
+        "art/elevations/kerb_dropped.png": "bf8b4d5f9254"
+      },
+      "used_by": {
+        "art/elevations/kerb_dropped.png": [
+          "kerby"
+        ]
+      },
+      "notes": "An edit of kerb_granite: the kerb lowered almost flush with the road, for driveway dead zones. No ramps at the ends, so it tiles; add ramps in code if a game needs them."
+    },
+    {
+      "name": "bangers_font",
+      "label": "Bangers, a comic display face (SIL OFL 1.1)",
+      "asset_id": null,
+      "source": "https://github.com/google/fonts/tree/main/ofl/bangers",
+      "credits": 0,
+      "added": "2026-10-08",
+      "outputs": [
+        "fonts/Bangers-Regular.ttf",
+        "fonts/OFL-Bangers.txt"
+      ],
+      "sha12": {
+        "fonts/Bangers-Regular.ttf": "4160a7311de9",
+        "fonts/OFL-Bangers.txt": "630dd5a307c0"
+      },
+      "used_by": {
+        "fonts/Bangers-Regular.ttf": [
+          "kerby"
+        ],
+        "fonts/OFL-Bangers.txt": [
+          "kerby"
+        ]
+      },
+      "notes": "Free font, not generated. Kerby uses it for CLACK!, CAR! and the title logo. Keep the OFL text next to the font."
     }
   ]
 }
