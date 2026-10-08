@@ -3,11 +3,122 @@
   "spritecook": {
     "project_id": "a15fc08b-1b06-4d31-a11b-e12f2be148f0",
     "model": "gemini-nano-banana-2.1",
-    "style_asset_ids": ["f2288672-913a-4a2e-9a9a-37b473507d60"]
+    "style_asset_ids": [
+      "f2288672-913a-4a2e-9a9a-37b473507d60"
+    ]
   },
   "games": {
     "tip-the-can": "https://github.com/danbhala/tip-the-can-game",
     "kerby": "https://github.com/danbhala/kerby-game"
   },
-  "assets": []
+  "assets": [
+    {
+      "name": "kerb_granite",
+      "label": "Granite kerb section, side-on, seamless left to right",
+      "asset_id": "9f885e14-aa70-4892-bde7-c1e88470e20e",
+      "prompt": "A straight section of British granite kerb stones seen side-on from a slightly elevated camera about 20 degrees down: a thin strip of paving slabs on top, the pale kerb stones with a crisp bright sunlit highlight running along the kerb's rounded top front edge, the kerb's vertical front face in soft shade, and a narrow strip of dark tarmac gutter at the bottom. Runs straight across the whole frame, horizontal, no objects, no people.",
+      "style": "flat gouache picture-book illustration matching the style reference: soft-edged flat colour fills with visible brush texture, warm low golden-hour sunlight from the upper left with an apricot rim light, one long soft painted shadow falling to the lower right, no black outlines",
+      "colors": [
+        "#E6DCCB",
+        "#C9BFB2",
+        "#4F5A66",
+        "#FFD99A",
+        "#9592B0"
+      ],
+      "aspect_ratio": "16:9",
+      "credits": 12,
+      "generated": "2026-10-08",
+      "generated_for": "kerby",
+      "outputs": [
+        "art/elevations/kerb_granite.png"
+      ],
+      "size": {
+        "art/elevations/kerb_granite.png": [
+          971,
+          315
+        ]
+      },
+      "sha12": {
+        "art/elevations/kerb_granite.png": "4e24e27af554"
+      },
+      "used_by": {
+        "art/elevations/kerb_granite.png": [
+          "kerby"
+        ]
+      },
+      "notes": "Seamless horizontal strip: the source with its rounded ends cut off and the seam cross-faded. Its highlight sits just under the top edge, so Kerby draws its own thin hit-zone line on top."
+    },
+    {
+      "name": "house_semi",
+      "label": "Red-brick 1930s semi, front elevation (one half)",
+      "asset_id": "dea237b6-43e8-4104-acc2-c94451977ee7",
+      "prompt": "The front of one red-brick 1930s British semi-detached house seen straight-on from the street, flat front elevation, side-on, not angled: hipped grey slate roof with a chimney, white UPVC bay window with net curtains downstairs, a window upstairs with pebble-dash panel, white UPVC porch and front door, a satellite dish on the wall. Only this one house, no ground, no garden, no people.",
+      "style": "flat gouache picture-book illustration matching the style reference: soft-edged flat colour fills with visible brush texture, warm low golden-hour sunlight from the upper left with an apricot rim light, one long soft painted shadow falling to the lower right, no black outlines",
+      "colors": [
+        "#B5533C",
+        "#7E3F3A",
+        "#EADBC0",
+        "#F3EEE2",
+        "#6B6E96",
+        "#F6B48F"
+      ],
+      "aspect_ratio": "1:1",
+      "credits": 12,
+      "generated": "2026-10-08",
+      "generated_for": "kerby",
+      "outputs": [
+        "art/elevations/house_semi.png"
+      ],
+      "size": {
+        "art/elevations/house_semi.png": [
+          796,
+          917
+        ]
+      },
+      "sha12": {
+        "art/elevations/house_semi.png": "c4dc805a033e"
+      },
+      "used_by": {
+        "art/elevations/house_semi.png": [
+          "kerby"
+        ]
+      },
+      "notes": "One half of a pair with its own hipped roof; mirroring it for the other half leaves a notch between the roofs. A true pair would need a new generation."
+    },
+    {
+      "name": "far_roofs",
+      "label": "Distant suburban roofline silhouette, seamless left to right",
+      "asset_id": "f630c15f-8f26-4678-9583-acc11c9875a8",
+      "prompt": "A long row of distant British suburban rooftops seen from far away: pitched roofs, chimney stacks with pots, TV aerials, a satellite dish and a few rounded tree crowns, painted as one flat soft silhouette band in muted dusky mauve with only very faint lighter edges where the low sun catches the roof ridges, no windows, no detail, no outlines. Front elevation, a straight horizontal strip filling the width, ends cut square, flat bottom edge. No ground, no sky, no cast shadow.",
+      "style": "flat gouache picture-book illustration matching the style reference: soft-edged flat colour fills with visible brush texture, one painted shadow shape on the right, warm apricot golden-hour light from a low sun on the left, no black outlines",
+      "colors": [
+        "#8A6F8F",
+        "#9D84A0",
+        "#B9A3D6",
+        "#F6C08E"
+      ],
+      "aspect_ratio": "16:9",
+      "credits": 12,
+      "generated": "2026-10-08",
+      "generated_for": "kerby",
+      "outputs": [
+        "art/elevations/far_roofs.png"
+      ],
+      "size": {
+        "art/elevations/far_roofs.png": [
+          1006,
+          197
+        ]
+      },
+      "sha12": {
+        "art/elevations/far_roofs.png": "7ad4487eed4b"
+      },
+      "used_by": {
+        "art/elevations/far_roofs.png": [
+          "kerby"
+        ]
+      },
+      "notes": "Flat muted-mauve silhouette with faint warm ridge highlights; fill below it with its own bottom-edge colour. Kerby uses it on the sky parallax layer; Tip the Can could use it in its sky band or title screen, graded to dusk."
+    }
+  ]
 }
