@@ -14,8 +14,10 @@ Shared art for Tip the Can and Kerby. Read README.md first; its "one rule" decid
 - Follow the house settings in Tip the Can's `.claude/skills/tip-the-can-art/SKILL.md`, but
   ask for "flat front elevation, seen straight-on, no ground, transparent background" instead
   of its top-down wording.
-- Changing or removing an asset can break both games. Say so in the PR, and list which games
-  need their submodule pointer bumped.
+- Every PR that changes what ships (art, fonts, manifest) adds a new `## [x.y.z]` section at
+  the top of `CHANGELOG.md`; merging it publishes the release. Removing or renaming an asset,
+  or changing its size or anchor, is a major version: say so in the PR and list which games
+  use it (from `used_by`), because they must be checked before upgrading.
 - Work on a branch and open a PR; never push to main.
 
 ## Questions for Dan (needs-dan issues)

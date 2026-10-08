@@ -47,14 +47,27 @@ manifest.json     every asset: SpriteCook id, prompt, outputs, which games use i
 
 ## Using it in a game
 
-Each game pulls this repo in as a git submodule at `addons/street_kit/`:
+Street Kit ships as versioned GitHub Releases, each with one `street-kit.zip`. Every game
+keeps a committed copy in `addons/street_kit/` and upgrades on purpose:
 
 ```
-git submodule add https://github.com/danbhala/street-kit addons/street_kit
+tools/update_street_kit.sh 0.2.0     # a specific version
+tools/update_street_kit.sh           # the latest release
 ```
 
-Godot then sees the files as `res://addons/street_kit/...`. Update with
-`git submodule update --remote addons/street_kit` and commit the new pointer.
+The script downloads that release, replaces `addons/street_kit/` with it, and leaves
+`addons/street_kit/VERSION` saying which version is installed. Godot sees the files as
+`res://addons/street_kit/...`. After running it: import (`godot --headless --import --path .`),
+check the game, and commit `addons/street_kit/` including the new `.import` files.
+
+No submodules and no package tokens: the files live in each game's repo, so exports and CI
+need no extra step.
+
+## Releasing
+
+Add a `## [x.y.z]` section at the top of `CHANGELOG.md` in your PR (rules for picking the
+number are at the top of that file). When the PR is merged, the Release workflow tags `vx.y.z`
+and publishes `street-kit.zip`.
 
 ## Asset list and plan
 
