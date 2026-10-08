@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Street Kit</title>
+<meta name="description" content="Shared street paintings for Tip the Can and Kerby: what exists, what's planned, and how to use it.">
+<link rel="preload" href="fonts/Fredoka.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-light="golden">
+
+<header class="street" aria-label="Street Kit">
+  <div class="sky sky-golden"></div>
+  <div class="sky sky-dusk"></div>
+  <svg class="skyline" viewBox="0 0 1200 470" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="lampGlow" cx="0.5" cy="0.35" r="0.6">
+        <stop offset="0" stop-color="#FFD99A" stop-opacity=".85"/>
+        <stop offset=".45" stop-color="#FFB347" stop-opacity=".28"/>
+        <stop offset="1" stop-color="#FFB347" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <g class="stars">
+      <circle cx="930" cy="60" r="2"/><circle cx="1040" cy="110" r="1.5"/><circle cx="760" cy="40" r="1.5"/>
+      <circle cx="300" cy="70" r="1.5"/><circle cx="520" cy="95" r="2"/>
+    </g>
+    <!-- far roofline -->
+    <path class="far" d="M0 262 L40 262 L70 236 L150 236 L180 262 L230 262 L230 232 L246 232 L246 262 L300 262 L330 230 L420 230 L450 262 L560 262 L590 238 L680 238 L700 262 L760 262 L760 226 L776 226 L776 262 L840 262 L870 232 L970 232 L1000 262 L1060 262 L1090 240 L1160 240 L1200 262 L1200 400 L0 400 Z"/>
+    <!-- tree -->
+    <g class="tree">
+      <rect x="884" y="250" width="12" height="130" class="trunk"/>
+      <circle cx="868" cy="236" r="40"/><circle cx="910" cy="222" r="44"/><circle cx="892" cy="270" r="38"/>
+      <path class="leaf-shade" d="M918 250 a40 40 0 0 1 -30 52 a38 38 0 0 0 36 -12 z"/>
+    </g>
+    <!-- semi pair -->
+    <g class="semi">
+      <polygon class="cast" points="430,380 500,380 540,412 450,412"/>
+      <rect x="148" y="98" width="26" height="40" class="brick-shade"/><rect x="326" y="98" width="26" height="40" class="brick-shade"/>
+      <polygon class="roof" points="48,224 118,132 362,132 432,224"/>
+      <polygon class="roof-shade" points="362,132 432,224 380,224"/>
+      <rect x="60" y="222" width="360" height="158" class="brick"/>
+      <rect x="378" y="222" width="42" height="158" class="brick-shade"/>
+      <rect x="238" y="222" width="4" height="158" class="brick-shade"/>
+      <g class="win"><rect x="95" y="250" width="70" height="48"/><rect x="315" y="250" width="70" height="48"/>
+        <rect x="88" y="316" width="84" height="52"/><rect x="308" y="316" width="84" height="52"/></g>
+      <g class="glow g1"><rect x="95" y="250" width="70" height="48"/><rect x="308" y="316" width="84" height="52"/></g>
+      <g class="glow g3"><rect x="88" y="316" width="84" height="52"/></g>
+      <g class="nets"><rect x="95" y="250" width="70" height="14"/><rect x="315" y="250" width="70" height="14"/>
+        <rect x="88" y="316" width="84" height="14"/><rect x="308" y="316" width="84" height="14"/></g>
+      <polygon class="porch" points="186,316 214,300 242,316"/><polygon class="porch" points="242,316 270,300 298,316"/>
+      <rect x="198" y="316" width="30" height="64" class="door door-a"/><rect x="256" y="316" width="30" height="64" class="door door-b"/>
+      <ellipse cx="398" cy="244" rx="11" ry="13" class="dish"/>
+    </g>
+    <!-- terrace -->
+    <g class="terrace">
+      <polygon class="cast" points="868,380 920,380 950,412 880,412"/>
+      <rect x="592" y="140" width="22" height="34" class="brick-shade"/><rect x="752" y="140" width="22" height="34" class="brick-shade"/>
+      <polygon class="roof" points="488,244 528,172 832,172 872,244"/>
+      <polygon class="roof-shade" points="832,172 872,244 840,244"/>
+      <rect x="500" y="242" width="120" height="138" class="brick"/>
+      <rect x="620" y="242" width="120" height="138" class="render"/>
+      <rect x="740" y="242" width="120" height="138" class="brick-warm"/>
+      <rect x="836" y="242" width="24" height="138" class="brick-shade"/>
+      <g class="win"><rect x="520" y="264" width="40" height="40"/><rect x="640" y="264" width="40" height="40"/><rect x="760" y="264" width="40" height="40"/>
+        <rect x="515" y="322" width="46" height="40"/><rect x="635" y="322" width="46" height="40"/><rect x="755" y="322" width="46" height="40"/></g>
+      <g class="glow g2"><rect x="640" y="264" width="40" height="40"/><rect x="515" y="322" width="46" height="40"/></g>
+      <g class="glow g4"><rect x="755" y="322" width="46" height="40"/></g>
+      <rect x="578" y="320" width="26" height="60" class="door door-c"/><rect x="698" y="320" width="26" height="60" class="door door-a"/><rect x="818" y="320" width="26" height="60" class="door door-b"/>
+    </g>
+    <!-- bungalow -->
+    <g class="bungalow">
+      <polygon class="cast" points="1100,380 1140,380 1160,412 1110,412"/>
+      <polygon class="roof" points="906,292 962,236 1060,236 1116,292"/>
+      <polygon class="roof-shade" points="1060,236 1116,292 1086,292"/>
+      <rect x="918" y="290" width="186" height="90" class="pebble"/>
+      <rect x="1084" y="290" width="20" height="90" class="pebble-shade"/>
+      <rect x="938" y="308" width="64" height="44" class="win-solo"/>
+      <rect x="938" y="308" width="64" height="44" class="glow g5"/>
+      <rect x="1030" y="314" width="30" height="66" class="door door-c"/>
+    </g>
+    <!-- garden line -->
+    <path class="hedge" d="M60 380 V356 q10-14 22-4 q10-16 24-4 q12-14 24-2 q10-14 22 0 V380 Z M300 380 V354 q12-16 26-4 q12-14 24-2 q10-12 20 4 q8-6 10 6 V380 Z M500 380 V358 q12-14 24-2 q12-14 24 0 V380 Z M760 380 V356 q10-14 22-4 q12-14 24 0 q8-8 14 4 V380 Z"/>
+    <path class="hedge-lit" d="M64 360 q8-10 16-4 q8-10 18-2 M306 358 q10-12 20-4 M504 362 q10-10 18-2 M764 360 q8-10 16-4"/>
+    <g class="wall"><rect x="180" y="362" width="120" height="18"/><rect x="600" y="364" width="160" height="16"/><rect x="176" y="352" width="14" height="28" class="pillar"/><rect x="292" y="352" width="14" height="28" class="pillar"/></g>
+    <!-- lamp -->
+    <circle cx="1132" cy="182" r="120" class="lamp-glow" fill="url(#lampGlow)"/>
+    <g class="lamp">
+      <rect x="1152" y="168" width="7" height="214"/>
+      <path d="M1155 172 q0 -16 -22 -16" fill="none" stroke-width="5"/>
+      <path class="lamp-head" d="M1118 152 h30 l-5 9 h-20 z"/>
+    </g>
+    <!-- pavement, kerb, road -->
+    <rect x="0" y="380" width="1200" height="34" class="pavement"/>
+    <path class="slabs" d="M60 380 L52 414 M180 380 L176 414 M300 380 L300 414 M420 380 L424 414 M540 380 L548 414 M660 380 L672 414 M780 380 L796 414 M900 380 L920 414 M1020 380 L1044 414 M1140 380 L1168 414"/>
+    <rect x="0" y="414" width="1200" height="10" class="kerb"/>
+    <rect x="0" y="414" width="1200" height="2" class="arris"/>
+    <rect x="0" y="424" width="1200" height="46" class="road"/>
+  </svg>
+
+  <div class="masthead">
+    <h1>Street Kit</h1>
+    <p class="lede">Shared paintings for <a href="https://github.com/danbhala/tip-the-can-game">Tip the Can</a> and <a href="https://github.com/danbhala/kerby-game">Kerby</a>. One street, two cameras, painted once.</p>
+    <p class="release" id="release">Loading the latest release…</p>
+  </div>
+</header>
+
+<main>
+  <section class="rule" aria-labelledby="rule-h">
+    <h2 id="rule-h">The one rule</h2>
+    <p>Tip the Can looks down on the street. Kerby looks along it from the pavement. A painting belongs here only if it reads from both.</p>
+    <div class="rule-cards">
+      <figure class="rule-card yes">
+        <svg viewBox="0 0 160 110" aria-hidden="true"><path d="M30 96V52H130V96M24 54L50 26H110L136 54M80 52V96M44 62h22v14H44zM94 62h22v14H94zM66 72h10v24H66zM84 72h10v24H84z"/><path class="ground" d="M10 96H150"/></svg>
+        <figcaption><strong>Front elevation</strong> Straight-on, cut out, no ground. Kerby stacks them as parallax; Tip the Can uses them as tile faces, sky band and map.</figcaption>
+      </figure>
+      <figure class="rule-card yes">
+        <svg viewBox="0 0 160 110" aria-hidden="true"><path d="M30 92V70h22v22zM30 70V48h22v22M52 48h22v22H52zM74 70h22v22H74zM112 70a16 11 0 1 0 32 0a16 11 0 1 0 -32 0M108 22h28v20H108zM115 22v20M122 22v20M129 22v20"/></svg>
+        <figcaption><strong>Top-down decal or texture</strong> Seen from directly above. Kerby foreshortens it through polygon UVs.</figcaption>
+      </figure>
+      <figure class="rule-card no">
+        <svg viewBox="0 0 160 110" aria-hidden="true"><path d="M50 40L80 26L110 40L80 54Z M50 40V82L80 96V54 M110 40V82L80 96"/><path class="cross" d="M120 14L146 40M146 14L120 40"/></svg>
+        <figcaption><strong>Three-quarter view</strong> Only fits one camera, so it stays in that game's repo. So do characters and UI.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="catalogue" aria-labelledby="cat-h">
+    <div class="cat-head">
+      <h2 id="cat-h">The kit</h2>
+      <p id="count" class="count"></p>
+    </div>
+    <div class="controls">
+      <div class="chips" role="group" aria-label="Show">
+        <button type="button" class="chip" data-status="all" aria-pressed="true">Everything</button>
+        <button type="button" class="chip" data-status="shipped" aria-pressed="false">Painted</button>
+        <button type="button" class="chip" data-status="planned" aria-pressed="false">Planned</button>
+      </div>
+      <div class="chips" role="group" aria-label="Preview light">
+        <button type="button" class="chip" data-light="golden" aria-pressed="true">Golden hour, as in Kerby</button>
+        <button type="button" class="chip" data-light="dusk" aria-pressed="false">Dusk, as in Tip the Can</button>
+      </div>
+    </div>
+    <div id="groups"></div>
+  </section>
+
+  <section class="palette" aria-labelledby="pal-h">
+    <h2 id="pal-h">Paint box</h2>
+    <p>The shared palette. Shadows are never black: they're dusk deep, multiplied. Tap a colour to copy its hex.</p>
+    <ul id="swatches" class="swatches"></ul>
+  </section>
+
+  <section class="use" aria-labelledby="use-h">
+    <h2 id="use-h">Using it in a game</h2>
+    <div class="use-grid">
+      <div>
+        <p>Each game keeps a copy in <code>addons/street_kit/</code> and upgrades on purpose. From the game's repo:</p>
+<pre><code>tools/update_street_kit.sh 0.2.0   # a specific version
+tools/update_street_kit.sh         # the latest
+godot --headless --import --path .</code></pre>
+        <p>Then check the game and commit <code>addons/street_kit/</code>, <code>.import</code> files included. Load files as <code>res://addons/street_kit/…</code>.</p>
+      </div>
+      <div>
+        <p>Read the <a href="https://github.com/danbhala/street-kit/blob/main/CHANGELOG.md">changelog</a> before upgrading.</p>
+        <ul class="versions">
+          <li><strong>Major</strong> An asset was removed, renamed or resized. Check the game first.</li>
+          <li><strong>Minor</strong> New paintings. Safe.</li>
+          <li><strong>Patch</strong> A repaint, same name and size. Safe.</li>
+        </ul>
+        <p>Need something new? <a href="https://github.com/danbhala/street-kit/issues/new?labels=needs-claude">Open an issue</a> describing it and which games want it.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Painted with SpriteCook in the Tip the Can house style. <a href="https://github.com/danbhala/street-kit">danbhala/street-kit</a></p>
+</footer>
+
+<dialog id="detail" aria-labelledby="d-title">
+  <form method="dialog"><button class="close" aria-label="Close">Close</button></form>
+  <div id="d-body"></div>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

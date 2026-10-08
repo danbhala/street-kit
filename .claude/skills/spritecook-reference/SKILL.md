@@ -8,8 +8,8 @@ description: Reference for everything SpriteCook can do (models and credit costs
 Everything public about SpriteCook, gathered on 2026-10-08 from spritecook.ai (all 145 pages,
 `llms.txt`, docs, blog, API reference), the hosted MCP server's own tool list, the free read-only
 API endpoints, and the official skill repos. It is a map, not a workflow: the official
-`spritecook-*` skills say how to run each job, and each game's art skill (for example Tip the
-Can's `tip-the-can-art`) holds its house settings.
+`spritecook-*` skills say how to run each job, and each repo's art skill (`street-kit-art` here,
+`tip-the-can-art` in Tip the Can) holds its house settings.
 
 **Credits are Dan's money.** Never spend without his yes for that batch: give the count and cost
 first, call `get_credit_balance` before and after, and report the spend. Everything in
@@ -190,7 +190,9 @@ SpriteCook publishes nine skills (identical copies in `SpriteCook/skills`,
 `SpriteCook/claude-plugin` v0.1.9 and the Codex, Cursor and OpenCode plugins):
 workflow-essentials, generate-sprites, animate-assets, generate-tilesets, use-dual-grid-tilesets,
 use-presets, use-assets-in-godot, **upload-assets** and **build-ui-kits**. Tip the Can vendors the
-first seven (byte-identical to upstream on 2026-10-08); the last two are not vendored yet.
+first seven (byte-identical to upstream on 2026-10-08) and Street Kit vendors five
+(workflow-essentials, generate-sprites, animate-assets, generate-tilesets, use-presets);
+neither has upload-assets or build-ui-kits yet.
 `npx skills add spritecook/skills` installs them anywhere. No third-party SpriteCook skills
 exist: the directory listings (skills.sh, claudemarketplaces.com) all point back to these repos.
 
