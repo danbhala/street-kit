@@ -766,7 +766,7 @@
       "id": "ground_decals",
       "name": "Ground decals: hopscotch, drain cover, puddle",
       "kind": "decal",
-      "status": "planned",
+      "status": "shipped",
       "sketch": "decals",
       "variants": [
         "hopscotch",
@@ -781,10 +781,10 @@
         "tip-the-can": "Ground decals",
         "kerby": "Pavement and road decals, foreshortened"
       },
-      "since": null,
+      "since": "0.4.0",
       "spritecook": {
-        "asset_id": null,
-        "prompt": null
+        "asset_id": "939721dd-0657-43dd-a676-ea481a9369e4",
+        "prompt": "3 separate ground decals in a single row with wide empty space between them, not touching: a hopscotch grid drawn in thick pale yellow chalk lines with chalk numbers 1 to 8, drawn on a rectangular patch of grey paving slabs; a square cast-iron drain cover; a shallow rain puddle. Seen from directly above, flat, evenly lit, transparent background around each one, no shadows."
       },
       "outputs": [
         {
@@ -795,7 +795,16 @@
           "count": 3,
           "index": 0,
           "width": 256,
-          "anchor": "centre"
+          "anchor": "centre",
+          "size": [
+            256,
+            346
+          ],
+          "sha12": "2c75f3782380",
+          "spritecook": {
+            "asset_id": "939721dd-0657-43dd-a676-ea481a9369e4",
+            "prompt": "3 separate ground decals in a single row with wide empty space between them, not touching: a hopscotch grid drawn in thick pale yellow chalk lines with chalk numbers 1 to 8, drawn on a rectangular patch of grey paving slabs; a square cast-iron drain cover; a shallow rain puddle. Seen from directly above, flat, evenly lit, transparent background around each one, no shadows."
+          }
         },
         {
           "variant": "drain cover",
@@ -805,7 +814,16 @@
           "count": 3,
           "index": 1,
           "width": 256,
-          "anchor": "centre"
+          "anchor": "centre",
+          "size": [
+            256,
+            255
+          ],
+          "sha12": "7b2a1fd203f8",
+          "spritecook": {
+            "asset_id": "939721dd-0657-43dd-a676-ea481a9369e4",
+            "prompt": "3 separate ground decals in a single row with wide empty space between them, not touching: a hopscotch grid drawn in thick pale yellow chalk lines with chalk numbers 1 to 8, drawn on a rectangular patch of grey paving slabs; a square cast-iron drain cover; a shallow rain puddle. Seen from directly above, flat, evenly lit, transparent background around each one, no shadows."
+          }
         },
         {
           "variant": "puddle",
@@ -815,9 +833,19 @@
           "count": 3,
           "index": 2,
           "width": 256,
-          "anchor": "centre"
+          "anchor": "centre",
+          "size": [
+            256,
+            239
+          ],
+          "sha12": "1ed09ec7f53c",
+          "spritecook": {
+            "asset_id": "939721dd-0657-43dd-a676-ea481a9369e4",
+            "prompt": "3 separate ground decals in a single row with wide empty space between them, not touching: a hopscotch grid drawn in thick pale yellow chalk lines with chalk numbers 1 to 8, drawn on a rectangular patch of grey paving slabs; a square cast-iron drain cover; a shallow rain puddle. Seen from directly above, flat, evenly lit, transparent background around each one, no shadows."
+          }
         }
-      ]
+      ],
+      "notes": "Repainted after the 0.3.0 sheet lost its white chalk hopscotch to background removal; the hopscotch now sits on a patch of paving slabs. Known flaw: the chalk numbers read 1, 2, 3, 4|5, 6, 7|7, 8 (the second 7 should be 8)."
     },
     {
       "id": "fonts",
