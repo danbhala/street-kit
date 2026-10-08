@@ -11,6 +11,10 @@ Shared art for Tip the Can and Kerby. Read README.md first; its "one rule" decid
 - SpriteCook costs Dan's paid credits. Never spend without his yes for that batch: state the
   count and cost first, call `get_credit_balance` before and after, and report the spend.
   Never ask for the API key in chat or write it to a file; it comes from `SPRITECOOK_API_KEY`.
+- Load the SpriteCook skills before any SpriteCook work (painting, animating, pricing or
+  planning): `spritecook-reference` (models, costs, every MCP tool), `street-kit-art`, and the
+  official `spritecook-*` skill for the job (`spritecook-workflow-essentials` always). Any that
+  are missing are at https://github.com/SpriteCook/skills.
 - To paint, use the `street-kit-art` skill (house settings, prompts per asset, costs, the
   processing step). Then set the asset's `status` to `shipped`, fill `spritecook` and `since`,
   and run `python3 tools/process_spritecook.py --check`.
