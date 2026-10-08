@@ -9,6 +9,16 @@ Versioning for art:
 - **Minor**: new assets added. Safe to upgrade.
 - **Patch**: an existing asset repainted with the same file name, size and anchor. Safe to upgrade.
 
+## [0.5.0]
+
+- Two paintings from Kerby's SpriteCook batches: a distant roofline silhouette
+  (`art/elevations/far_roofs.png`, a soft mauve band behind the detailed roofline) and a granite
+  kerb section (`art/elevations/kerb_granite.png`, Kerby's gameplay strip, seen 20° down).
+- Kerby's copy of the red-brick semi wasn't added: it's the same SpriteCook painting as
+  `semi_house_red_brick.png`, which shipped in 0.2.0.
+- This is the first published release. Versions 0.2.0 to 0.4.0 were never tagged, because they
+  were merged before the release workflow reached main; everything they list is in this zip.
+
 ## [0.4.0]
 
 - Ground decals: hopscotch (chalk on a patch of paving slabs), cast-iron drain cover and puddle,

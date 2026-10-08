@@ -295,6 +295,76 @@
       ]
     },
     {
+      "id": "far_roofs",
+      "name": "Distant roofline silhouette",
+      "kind": "elevation",
+      "status": "shipped",
+      "sketch": "roofline",
+      "variants": [
+        "tileable"
+      ],
+      "used_by": [
+        "kerby",
+        "tip-the-can"
+      ],
+      "uses": {
+        "kerby": "Sky layer, behind the street",
+        "tip-the-can": "Could sit in the sky band or title screen, graded to dusk"
+      },
+      "since": "0.5.0",
+      "spritecook": {
+        "asset_id": "f630c15f-8f26-4678-9583-acc11c9875a8",
+        "prompt": "A long row of distant British suburban rooftops seen from far away: pitched roofs, chimney stacks with pots, TV aerials, a satellite dish and a few rounded tree crowns, painted as one flat soft silhouette band in muted dusky mauve with only very faint lighter edges where the low sun catches the roof ridges, no windows, no detail, no outlines. Front elevation, a straight horizontal strip filling the width, ends cut square, flat bottom edge. No ground, no sky, no cast shadow."
+      },
+      "outputs": [
+        {
+          "variant": "tileable",
+          "path": "art/elevations/far_roofs.png",
+          "size": [
+            1006,
+            197
+          ],
+          "anchor": "bottom-left",
+          "sha12": "7ad4487eed4b"
+        }
+      ],
+      "notes": "Painted in Kerby's batches as one soft muted-mauve band, further away than the detailed roofline strip."
+    },
+    {
+      "id": "kerb_granite",
+      "name": "Granite kerb section",
+      "kind": "elevation",
+      "status": "shipped",
+      "sketch": "wall",
+      "variants": [
+        "tileable"
+      ],
+      "used_by": [
+        "kerby"
+      ],
+      "uses": {
+        "kerby": "The kerb you throw at: the gameplay strip"
+      },
+      "since": "0.5.0",
+      "spritecook": {
+        "asset_id": "9f885e14-aa70-4892-bde7-c1e88470e20e",
+        "prompt": "A straight section of British granite kerb stones seen side-on from a slightly elevated camera about 20 degrees down: a thin strip of paving slabs on top, the pale kerb stones with a crisp bright sunlit highlight running along the kerb's rounded top front edge, the kerb's vertical front face in soft shade, and a narrow strip of dark tarmac gutter at the bottom. Runs straight across the whole frame, horizontal, no objects, no people."
+      },
+      "outputs": [
+        {
+          "variant": "tileable",
+          "path": "art/elevations/kerb_granite.png",
+          "size": [
+            971,
+            315
+          ],
+          "anchor": "bottom-left",
+          "sha12": "4e24e27af554"
+        }
+      ],
+      "notes": "Seen from about 20 degrees down, so it suits Kerby's camera; Tip the Can has no use for it. The highlight sits just under the top edge, so Kerby draws its own hit-zone line."
+    },
+    {
       "id": "garden_wall",
       "name": "Brick garden wall with pillar",
       "kind": "elevation",
