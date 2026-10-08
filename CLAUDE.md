@@ -11,8 +11,11 @@ Shared art for Tip the Can and Kerby. Read README.md first; its "one rule" decid
 - SpriteCook costs Dan's paid credits. Never spend without his yes for that batch: state the
   count and cost first, call `get_credit_balance` before and after, and report the spend.
   Never ask for the API key in chat or write it to a file; it comes from `SPRITECOOK_API_KEY`.
-- Before planning or pricing any SpriteCook job, read the `spritecook-reference` skill
-  (`.claude/skills/spritecook-reference/`): models, costs, every MCP tool and workflow.
+- Load the SpriteCook skills before any SpriteCook work (generating, animating, pricing or
+  planning): `spritecook-reference` here (models, costs, every MCP tool), then the official
+  `spritecook-*` skill for the job (`spritecook-workflow-essentials` always) and the game's art
+  skill, e.g. Tip the Can's `tip-the-can-art`. If a game lacks the official skills, read them
+  from https://github.com/SpriteCook/skills.
 - Follow the house settings in Tip the Can's `.claude/skills/tip-the-can-art/SKILL.md`, but
   ask for "flat front elevation, seen straight-on, no ground, transparent background" instead
   of its top-down wording.
