@@ -1,0 +1,13 @@
+{
+  "about": "Every shared Street Kit asset. Re-download a source with SpriteCook get_asset_metadata(asset_id).sprite_url. used_by lists the games that use each output.",
+  "spritecook": {
+    "project_id": "a15fc08b-1b06-4d31-a11b-e12f2be148f0",
+    "model": "gemini-nano-banana-2.1",
+    "style_asset_ids": ["f2288672-913a-4a2e-9a9a-37b473507d60"]
+  },
+  "games": {
+    "tip-the-can": "https://github.com/danbhala/tip-the-can-game",
+    "kerby": "https://github.com/danbhala/kerby-game"
+  },
+  "assets": []
+}
