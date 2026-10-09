@@ -126,7 +126,7 @@
     const uses = (a.used_by || []).map((g) => `<div><span class="game ${esc(g)}">${esc(GAMES[g] || g)}</span><div>${esc((a.uses || {})[g] || "")}</div></div>`).join("");
     const files = outs.length ? `<table class="d-files"><thead><tr><th>${a.status === "shipped" ? "File" : "Will be saved as"}</th><th>${a.status === "shipped" ? "Size" : "Width"}</th><th>Anchor</th></tr></thead><tbody>${outs.map((o) => {
       const res = `res://addons/street_kit/${o.path}`;
-      return `<tr><td><code>${esc(o.path)}</code>${copyButton(res, "Copy res:// path")}</td><td>${o.size ? esc(o.size.join(" × ")) + " px" : o.width ? esc(o.width) + " px" : ""}</td><td>${esc(o.anchor || "")}</td></tr>`;
+      return `<tr><td><code>${esc(o.path)}</code>${o.since ? ` <small>since v${esc(o.since)}</small>` : ""}${copyButton(res, "Copy res:// path")}</td><td>${o.size ? esc(o.size.join(" × ")) + " px" : o.width ? esc(o.width) + " px" : ""}</td><td>${esc(o.anchor || "")}</td></tr>`;
     }).join("")}</tbody></table>` : `<p class="d-note">No files yet. Variants planned: ${esc((a.variants || []).join(", ") || "one")}.</p>`;
     const sc = a.spritecook || {};
     const scBlock = sc.asset_id || sc.prompt ? `<details><summary>SpriteCook source</summary>

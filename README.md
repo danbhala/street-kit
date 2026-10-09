@@ -46,7 +46,9 @@ This repo has the SpriteCook connection (`.mcp.json`, key from `SPRITECOOK_API_K
 `street-kit-art` skill, so a Claude session here can paint the kit directly. Every planned
 asset in `manifest.json` already has its output files listed; paint the raw, then run
 `python3 tools/process_spritecook.py <raw_dir>`, which writes the files and fills in sizes and
-hashes. `python3 tools/process_spritecook.py --check` verifies every shipped file.
+hashes. `python3 tools/process_spritecook.py --check` verifies every shipped file, and
+`--derive` rebuilds the outputs made from other kit files (such as the plain tarmac and its
+patch decals) with no download.
 
 ## Layout
 
