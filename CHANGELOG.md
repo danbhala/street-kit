@@ -9,6 +9,15 @@ Versioning for art:
 - **Minor**: new assets added. Safe to upgrade.
 - **Patch**: an existing asset repainted with the same file name, size and anchor. Safe to upgrade.
 
+## [0.6.0]
+
+- Two seamless ground textures for back lanes, seen from directly above, in `art/textures/`
+  (512x512, tile on both axes): grey-brown pea gravel (`gravel.png`) and worn back-lane tarmac
+  with patches and cracks (`lane_tarmac.png`). Painted to sit next to Tip the Can's pavement
+  tile; Tip the Can uses them for street two, the lane behind the houses.
+- Known flaws: the gravel's cross-faded tile edges are a little softer than its middle, and the
+  tarmac's three patches repeat visibly every 512 px.
+
 ## [0.5.0]
 
 - Two paintings from Kerby's SpriteCook batches: a distant roofline silhouette

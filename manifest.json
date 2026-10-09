@@ -918,6 +918,86 @@
       "notes": "Repainted after the 0.3.0 sheet lost its white chalk hopscotch to background removal; the hopscotch now sits on a patch of paving slabs. Known flaw: the chalk numbers read 1, 2, 3, 4|5, 6, 7|7, 8 (the second 7 should be 8)."
     },
     {
+      "id": "gravel",
+      "name": "Pea gravel",
+      "kind": "texture",
+      "status": "shipped",
+      "sketch": "decals",
+      "variants": [
+        "tileable"
+      ],
+      "used_by": [
+        "tip-the-can"
+      ],
+      "uses": {
+        "tip-the-can": "Street two (the back lane): noisy gravel ground tiles"
+      },
+      "since": "0.6.0",
+      "spritecook": {
+        "asset_id": "df4afa85-814f-49f1-9d8d-c48b9b4df805",
+        "prompt": "Seamless tileable top-down texture of loose British pea gravel, as on a back lane or garage forecourt: a dense even layer of small rounded pebbles in warm greys, grey-browns and buff, painted in the same gouache style and soft colour treatment as the reference pavement texture but a completely different surface, no paving slabs, no joints. Seen from directly above, evenly lit, no shadows from objects, no objects."
+      },
+      "outputs": [
+        {
+          "variant": "tileable",
+          "raw": "gravel",
+          "path": "art/textures/gravel.png",
+          "mode": "texture",
+          "width": 512,
+          "spritecook": {
+            "asset_id": "df4afa85-814f-49f1-9d8d-c48b9b4df805",
+            "prompt": "Seamless tileable top-down texture of loose British pea gravel, as on a back lane or garage forecourt: a dense even layer of small rounded pebbles in warm greys, grey-browns and buff, painted in the same gouache style and soft colour treatment as the reference pavement texture but a completely different surface, no paving slabs, no joints. Seen from directly above, evenly lit, no shadows from objects, no objects."
+          },
+          "size": [
+            512,
+            512
+          ],
+          "sha12": "9f1a4cdf15e5"
+        }
+      ],
+      "notes": "Painted with Tip the Can's pavement texture (2f839185-6ddb-4c7d-9cfd-6ec36b74f296) as the reference so the two sit together. Variation 1 of 2 picked."
+    },
+    {
+      "id": "lane_tarmac",
+      "name": "Back-lane tarmac",
+      "kind": "texture",
+      "status": "shipped",
+      "sketch": "decals",
+      "variants": [
+        "tileable"
+      ],
+      "used_by": [
+        "tip-the-can"
+      ],
+      "uses": {
+        "tip-the-can": "Street two (the back lane): the lane surface behind the houses"
+      },
+      "since": "0.6.0",
+      "spritecook": {
+        "asset_id": "0d285417-e842-418f-837a-8cdeca34b1df",
+        "prompt": "Seamless tileable top-down texture of worn British back-lane tarmac: dark blue-grey asphalt with fine grit, a few slightly darker and lighter patch repairs with soft edges, and a few thin cracks, painted in the same gouache style and soft colour treatment as the reference pavement texture but a completely different surface, no paving slabs, no road markings, no kerbs. Seen from directly above, evenly lit, no shadows from objects, no objects."
+      },
+      "outputs": [
+        {
+          "variant": "tileable",
+          "raw": "lane_tarmac",
+          "path": "art/textures/lane_tarmac.png",
+          "mode": "texture",
+          "width": 512,
+          "spritecook": {
+            "asset_id": "0d285417-e842-418f-837a-8cdeca34b1df",
+            "prompt": "Seamless tileable top-down texture of worn British back-lane tarmac: dark blue-grey asphalt with fine grit, a few slightly darker and lighter patch repairs with soft edges, and a few thin cracks, painted in the same gouache style and soft colour treatment as the reference pavement texture but a completely different surface, no paving slabs, no road markings, no kerbs. Seen from directly above, evenly lit, no shadows from objects, no objects."
+          },
+          "size": [
+            512,
+            512
+          ],
+          "sha12": "59115fb099b1"
+        }
+      ],
+      "notes": "Painted with Tip the Can's pavement texture (2f839185-6ddb-4c7d-9cfd-6ec36b74f296) as the reference so the two sit together. Variation 1 of 2 picked."
+    },
+    {
       "id": "fonts",
       "name": "Fredoka and Cabin Sketch Bold",
       "kind": "font",
