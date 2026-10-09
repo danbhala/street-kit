@@ -964,7 +964,8 @@
       "status": "shipped",
       "sketch": "decals",
       "variants": [
-        "tileable"
+        "tileable",
+        "plain"
       ],
       "used_by": [
         "tip-the-can"
@@ -993,9 +994,133 @@
             512
           ],
           "sha12": "59115fb099b1"
+        },
+        {
+          "variant": "plain",
+          "from": "art/textures/lane_tarmac.png",
+          "path": "art/textures/lane_tarmac_plain.png",
+          "mode": "plain_texture",
+          "remove": [
+            {
+              "box": [
+                404,
+                -28,
+                158,
+                135
+              ],
+              "threshold": 0.55
+            },
+            {
+              "box": [
+                68,
+                68,
+                145,
+                160
+              ],
+              "threshold": 0.55
+            },
+            {
+              "box": [
+                328,
+                211,
+                124,
+                162
+              ],
+              "threshold": 0.55
+            },
+            {
+              "box": [
+                345,
+                370,
+                150,
+                80
+              ],
+              "threshold": 0.3
+            }
+          ],
+          "spritecook": {
+            "asset_id": "0d285417-e842-418f-837a-8cdeca34b1df",
+            "prompt": "Seamless tileable top-down texture of worn British back-lane tarmac: dark blue-grey asphalt with fine grit, a few slightly darker and lighter patch repairs with soft edges, and a few thin cracks, painted in the same gouache style and soft colour treatment as the reference pavement texture but a completely different surface, no paving slabs, no road markings, no kerbs. Seen from directly above, evenly lit, no shadows from objects, no objects."
+          },
+          "size": [
+            512,
+            512
+          ],
+          "sha12": "8978335256ab"
         }
       ],
-      "notes": "Painted with Tip the Can's pavement texture (2f839185-6ddb-4c7d-9cfd-6ec36b74f296) as the reference so the two sit together. Variation 1 of 2 picked."
+      "notes": "Painted with Tip the Can's pavement texture (2f839185-6ddb-4c7d-9cfd-6ec36b74f296) as the reference so the two sit together. Variation 1 of 2 picked. The plain variant is the same painting with its patches lifted out (no new SpriteCook run), so lanes can scatter the tarmac_patches decals instead of repeating the same three patches every 512 px."
+    },
+    {
+      "id": "tarmac_patches",
+      "name": "Tarmac patch repairs",
+      "kind": "decal",
+      "status": "shipped",
+      "sketch": "decals",
+      "variants": [
+        "dark",
+        "grey"
+      ],
+      "used_by": [
+        "tip-the-can"
+      ],
+      "uses": {
+        "tip-the-can": "Street two (the back lane): patch repairs scattered over the plain tarmac"
+      },
+      "since": "0.7.0",
+      "spritecook": {
+        "asset_id": "0d285417-e842-418f-837a-8cdeca34b1df",
+        "prompt": "Seamless tileable top-down texture of worn British back-lane tarmac: dark blue-grey asphalt with fine grit, a few slightly darker and lighter patch repairs with soft edges, and a few thin cracks, painted in the same gouache style and soft colour treatment as the reference pavement texture but a completely different surface, no paving slabs, no road markings, no kerbs. Seen from directly above, evenly lit, no shadows from objects, no objects."
+      },
+      "outputs": [
+        {
+          "variant": "dark",
+          "from": "art/textures/lane_tarmac.png",
+          "path": "art/decals/tarmac_patch_dark.png",
+          "mode": "cutout",
+          "box": [
+            68,
+            68,
+            145,
+            160
+          ],
+          "threshold": 0.55,
+          "anchor": "centre",
+          "spritecook": {
+            "asset_id": "0d285417-e842-418f-837a-8cdeca34b1df",
+            "prompt": "Seamless tileable top-down texture of worn British back-lane tarmac: dark blue-grey asphalt with fine grit, a few slightly darker and lighter patch repairs with soft edges, and a few thin cracks, painted in the same gouache style and soft colour treatment as the reference pavement texture but a completely different surface, no paving slabs, no road markings, no kerbs. Seen from directly above, evenly lit, no shadows from objects, no objects."
+          },
+          "size": [
+            141,
+            156
+          ],
+          "sha12": "b1532daaad08"
+        },
+        {
+          "variant": "grey",
+          "from": "art/textures/lane_tarmac.png",
+          "path": "art/decals/tarmac_patch_grey.png",
+          "mode": "cutout",
+          "box": [
+            328,
+            211,
+            124,
+            152
+          ],
+          "threshold": 0.55,
+          "anchor": "centre",
+          "spritecook": {
+            "asset_id": "0d285417-e842-418f-837a-8cdeca34b1df",
+            "prompt": "Seamless tileable top-down texture of worn British back-lane tarmac: dark blue-grey asphalt with fine grit, a few slightly darker and lighter patch repairs with soft edges, and a few thin cracks, painted in the same gouache style and soft colour treatment as the reference pavement texture but a completely different surface, no paving slabs, no road markings, no kerbs. Seen from directly above, evenly lit, no shadows from objects, no objects."
+          },
+          "size": [
+            128,
+            156
+          ],
+          "sha12": "1a5f69ad3461"
+        }
+      ],
+      "notes": "Cut out of lane_tarmac.png (no new SpriteCook run), at the texture's scale: 512 px of tarmac is 4 of Tip the Can's tiles. Lay them on lane_tarmac_plain.png at any angle."
     },
     {
       "id": "fonts",
