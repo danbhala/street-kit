@@ -1046,7 +1046,8 @@
             512,
             512
           ],
-          "sha12": "8978335256ab"
+          "sha12": "d79421c06d7f",
+          "since": "0.7.0"
         }
       ],
       "notes": "Painted with Tip the Can's pavement texture (2f839185-6ddb-4c7d-9cfd-6ec36b74f296) as the reference so the two sit together. Variation 1 of 2 picked. The plain variant is the same painting with its patches lifted out (no new SpriteCook run), so lanes can scatter the tarmac_patches decals instead of repeating the same three patches every 512 px."
@@ -1094,7 +1095,7 @@
             141,
             156
           ],
-          "sha12": "b1532daaad08"
+          "sha12": "6e58c449a9b4"
         },
         {
           "variant": "grey",
@@ -1105,7 +1106,7 @@
             328,
             211,
             124,
-            152
+            162
           ],
           "threshold": 0.55,
           "anchor": "centre",
@@ -1114,10 +1115,10 @@
             "prompt": "Seamless tileable top-down texture of worn British back-lane tarmac: dark blue-grey asphalt with fine grit, a few slightly darker and lighter patch repairs with soft edges, and a few thin cracks, painted in the same gouache style and soft colour treatment as the reference pavement texture but a completely different surface, no paving slabs, no road markings, no kerbs. Seen from directly above, evenly lit, no shadows from objects, no objects."
           },
           "size": [
-            128,
-            156
+            120,
+            166
           ],
-          "sha12": "1a5f69ad3461"
+          "sha12": "10991fba6558"
         }
       ],
       "notes": "Cut out of lane_tarmac.png (no new SpriteCook run), at the texture's scale: 512 px of tarmac is 4 of Tip the Can's tiles. Lay them on lane_tarmac_plain.png at any angle."

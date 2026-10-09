@@ -20,7 +20,8 @@ An output can instead be made from another kit file, with no SpriteCook download
   "mode":  plain_texture  the texture with its painted patches lifted out ("remove": list of
                           {"box": [x, y, w, h], "threshold": t}; boxes may cross the edge, it wraps)
            cutout         one patch from the texture as a decal on transparency ("box", "threshold")
-Derived outputs are rebuilt after every raw run, so they follow their source.
+Derived outputs are rebuilt only by --derive. A raw run that rewrites a source lists them, because
+their boxes are tied to that exact painting and must be checked first.
 Outputs are written deterministically, and "size" and "sha12" are filled in.
 Needs Pillow and numpy.
 """
@@ -123,27 +124,64 @@ def _shrink(mask: np.ndarray, px: int) -> np.ndarray:
     return 1.0 - _grow(1.0 - mask, px)
 
 
-def _patch_mask(rgb: np.ndarray, box: list, threshold: float) -> np.ndarray:
-    """Pixels inside [box] whose colour stands out from the texture's usual colour: a painted
-    patch, darker, lighter or warmer than the ground around it."""
-    h, w = rgb.shape[:2]
+def _score(rgb: np.ndarray) -> np.ndarray:
+    """How far each pixel stands out from the texture's usual colour: a painted patch is
+    darker, lighter or warmer than the ground around it."""
     soft = _wrap_blur(rgb, 3)
     usual = np.median(rgb.reshape(-1, 3), axis=0)
-    score = np.maximum(np.abs((soft - usual).mean(2)) / 14,
-                       ((soft[..., 0] - soft[..., 2]) - (usual[0] - usual[2])) / 12)
+    return np.maximum(np.abs((soft - usual).mean(2)) / 14,
+                      ((soft[..., 0] - soft[..., 2]) - (usual[0] - usual[2])) / 12)
+
+
+def _largest_part(mask: np.ndarray) -> np.ndarray:
+    """Keeps only the biggest connected blob of a mask (wrapping), dropping stray specks."""
+    h, w = mask.shape
+    on = mask > 0.5
+    seen = np.zeros_like(on)
+    best: list = []
+    for y0, x0 in zip(*np.nonzero(on)):
+        if seen[y0, x0]:
+            continue
+        part, todo = [], [(y0, x0)]
+        seen[y0, x0] = True
+        while todo:
+            y, x = todo.pop()
+            part.append((y, x))
+            for ny, nx in ((y - 1, x), (y + 1, x), (y, x - 1), (y, x + 1)):
+                ny, nx = ny % h, nx % w
+                if on[ny, nx] and not seen[ny, nx]:
+                    seen[ny, nx] = True
+                    todo.append((ny, nx))
+        if len(part) > len(best):
+            best = part
+    out = np.zeros_like(mask)
+    if best:
+        ys, xs = zip(*best)
+        out[list(ys), list(xs)] = 1
+    return out
+
+
+def _patch_mask(score: np.ndarray, box: list, threshold: float, what: str) -> np.ndarray:
+    """The patch inside [box]: pixels scoring above [threshold], with small gaps closed."""
+    h, w = score.shape
     x, y, bw, bh = box
     inside = np.zeros((h, w))
     inside[np.ix_(np.arange(y, y + bh) % h, np.arange(x, x + bw) % w)] = 1
-    return _shrink(_grow((score > threshold) * inside, 6), 6)
+    mask = _shrink(_grow((score > threshold) * inside, 6), 6)
+    if mask.sum() < 400:
+        sys.exit(f"{what}: no painted patch found in box {box}. If the source was repainted, "
+                 "find the new patches and update the boxes in manifest.json.")
+    return mask
 
 
-def plain_texture(im: Image.Image, removes: list) -> Image.Image:
+def plain_texture(im: Image.Image, removes: list, what: str) -> Image.Image:
     """Lifts painted patches out of a tiling texture. Each one is filled with clean ground
     copied from elsewhere in the same texture, shifted to match the slow colour drift around
     the hole and feathered in, so grain and brushwork carry on through."""
     a = np.asarray(im.convert("RGBA")).astype(np.float64)
     rgb = a[..., :3]
-    masks = [_patch_mask(rgb, r["box"], r["threshold"]) for r in removes]
+    score = _score(rgb)
+    masks = [_patch_mask(score, r["box"], r["threshold"], what) for r in removes]
     everything = np.clip(sum(masks), 0, 1)
     avoid = _grow(everything, 24)
     keep = 1.0 - _grow(everything, 10)
@@ -152,45 +190,53 @@ def plain_texture(im: Image.Image, removes: list) -> Image.Image:
     for mask in masks:
         hole = _grow(mask, 14)
         feather = np.maximum(np.clip(_wrap_blur(hole, 5), 0, 1), _grow(mask, 7))
+        # How much patch a copy shifted by (dy, dx) would bring into the hole, for every
+        # shift at once: a circular cross-correlation.
+        overlap = np.real(np.fft.ifft2(np.fft.fft2(avoid) * np.conj(np.fft.fft2(hole))))
         best = None
         for dy in range(-h // 2, h // 2 + 1, 16):
             for dx in range(-w // 2, w // 2 + 1, 16):
                 if abs(dx) < 120 and abs(dy) < 120:
                     continue
-                cost = (np.roll(avoid, (-dy, -dx), (0, 1)) * hole).sum()
+                cost = round(float(overlap[dy % h, dx % w]), 3)
                 if best is None or cost < best[0]:
                     best = (cost, dx, dy)
         _, dx, dy = best
         fill = np.roll(a, (-dy, -dx), (0, 1))
         fill[..., :3] += drift - np.roll(drift, (-dy, -dx), (0, 1))
         a = a * (1 - feather[..., None]) + fill * feather[..., None]
-    return Image.fromarray(a.clip(0, 255).astype(np.uint8), "RGBA")
+    return Image.fromarray(np.rint(a).clip(0, 255).astype(np.uint8), "RGBA")
 
 
-def cutout(im: Image.Image, box: list, threshold: float) -> Image.Image:
+def cutout(im: Image.Image, box: list, threshold: float, what: str) -> Image.Image:
     """One painted patch from a texture, with a soft edge, on transparency."""
     a = np.asarray(im.convert("RGBA")).astype(np.float64)
-    alpha = np.clip(_wrap_blur(_grow(_patch_mask(a[..., :3], box, threshold), 3), 1.5), 0, 1)
+    mask = _largest_part(_patch_mask(_score(a[..., :3]), box, threshold, what))
+    alpha = np.clip(_wrap_blur(_grow(mask, 3), 1.5), 0, 1)
     a[..., 3] = alpha * 255
     # roll the patch away from the edges so it is in one piece, then trim
     x, y, bw, bh = box
     a = np.roll(a, (a.shape[0] // 2 - (y + bh // 2), a.shape[1] // 2 - (x + bw // 2)), (0, 1))
-    return trim(Image.fromarray(a.clip(0, 255).astype(np.uint8), "RGBA"))
+    return trim(Image.fromarray(np.rint(a).clip(0, 255).astype(np.uint8), "RGBA"))
 
 
 def derive() -> int:
     """Rebuilds every output made from another kit file. Returns how many were written."""
     m = json.loads(MANIFEST.read_text())
     done = 0
+    sources: dict = {}
     for asset in m["assets"]:
         for out in asset.get("outputs", []):
             if not out.get("from"):
                 continue
-            im = Image.open(ROOT / out["from"]).convert("RGBA")
+            if out["from"] not in sources:
+                sources[out["from"]] = Image.open(ROOT / out["from"]).convert("RGBA")
+            im = sources[out["from"]]
+            what = f"{asset['id']} ({out['path']})"
             if out["mode"] == "plain_texture":
-                res = plain_texture(im, out["remove"])
+                res = plain_texture(im, out["remove"], what)
             elif out["mode"] == "cutout":
-                res = cutout(im, out["box"], out["threshold"])
+                res = cutout(im, out["box"], out["threshold"], what)
             else:
                 sys.exit(f"{asset['id']}: unknown derived mode {out['mode']!r}")
             dest = ROOT / out["path"]
@@ -239,8 +285,13 @@ def process(raw_dir: Path) -> None:
             print(f"{out['path']}  {res.width}x{res.height}  {out['sha12']}")
             done += 1
     MANIFEST.write_text(json.dumps(m, indent=2, ensure_ascii=False) + "\n")
-    done += derive()
     print(f"{done} file(s) written; manifest.json updated.")
+    written = {out["path"] for a in m["assets"] for out in a.get("outputs", [])
+               if out.get("raw") and (raw_dir / f"{out['raw']}.png").exists()}
+    stale = sorted({out["path"] for a in m["assets"] for out in a.get("outputs", []) if out.get("from") in written})
+    if stale:
+        print("These are made from a file you just rewrote. Check their boxes still sit on the new "
+              "painting, then run --derive:\n  " + "\n  ".join(stale))
 
 
 def check() -> None:

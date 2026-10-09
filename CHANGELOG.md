@@ -12,12 +12,13 @@ Versioning for art:
 ## [0.7.0]
 
 - The back-lane tarmac no longer has to repeat its patches. New `art/textures/lane_tarmac_plain.png`
-  (512x512, tiles on both axes) is the same painting with its three patch repairs lifted out, and
+  (512x512, tiles on both axes) is the same painting with its three patch repairs and one faint dark smudge lifted out, and
   the two big patches are now decals in `art/decals/` (`tarmac_patch_dark.png`,
   `tarmac_patch_grey.png`, centre anchor, at the texture's scale) to scatter over it at any angle.
   `lane_tarmac.png` is unchanged.
 - No new SpriteCook run: `tools/process_spritecook.py --derive` makes all three from
-  `lane_tarmac.png`, and rebuilds them after every raw run.
+  `lane_tarmac.png`. Their boxes are tied to that painting, so a raw run that rewrites it lists
+  them to check rather than rebuilding them.
 
 ## [0.6.0]
 
