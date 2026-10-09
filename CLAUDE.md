@@ -25,7 +25,7 @@ Shared art for Tip the Can and Kerby. Read README.md first; its "one rule" decid
   the top of `CHANGELOG.md`; merging it publishes the release. Removing or renaming an asset,
   or changing its size or anchor, is a major version: say so in the PR and list which games
   use it (from `used_by`), because they must be checked before upgrading.
-- Work on a branch and open a PR; never push to main.
+- Work on a branch and open a PR with the `open-pr` skill; never push to main.
 
 ## Questions for Dan (needs-dan issues)
 

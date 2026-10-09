@@ -84,4 +84,4 @@ both games; then houses and backdrop; then street furniture; then dressing.
 4. In `manifest.json`: set the asset's `status` to `shipped`, `since` to the release version,
    and `spritecook.asset_id` and `spritecook.prompt`.
 5. `python3 tools/process_spritecook.py --check`, add a CHANGELOG version (minor for new art),
-   and open a PR with before/after images and the credits spent.
+   and open a PR with the credits spent and the asset table from the `open-pr` skill.
