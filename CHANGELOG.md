@@ -9,6 +9,26 @@ Versioning for art:
 - **Minor**: new assets added. Safe to upgrade.
 - **Patch**: an existing asset repainted with the same file name, size and anchor. Safe to upgrade.
 
+## [1.0.0]
+
+Major because one file changes size: **`art/elevations/lamp_post_lit.png` is now 160x617
+(was 160x638).** Check the lit lamp in Tip the Can and Kerby before upgrading. It is anchored
+bottom-centre, so a game that places it by its foot sees the lamp head drop 21 px to where the
+unlit lamp's head is; a game that positions it by its centre or top must adjust.
+
+- The lit lamp post is now exactly the unlit one's size. SpriteCook painted it about 3% taller;
+  processing now scales it to match (`same_size_as` in `manifest.json`), so switching the lamp
+  on no longer makes it jump.
+- Hopscotch fixed: the numbers now read 1, 2, 3, 4|5, 6, 7|8, 9 instead of repeating 7. Repainted
+  as a SpriteCook edit of the old sheet (12 credits); same size (256x346), same slabs and chalk.
+- The seven tiling strips no longer show a see-through ghost where they repeat. Processing used
+  to fade the strip's two ends through each other, which left half-visible chimneys, windows
+  and doors at the join; it now cuts from one end to the other along the line where they match
+  best, with the strip's window moved (and stretched by at most 4%) to where the ends line
+  up. Same sizes, no new painting:
+  `terrace_row_brick`, `terrace_row_render`, `roofline`, `garden_wall`, `privet_hedge`,
+  `closeboard_fence`, `garage_row`.
+
 ## [0.8.0]
 
 - Three paintings from Kerby's second SpriteCook batch, in `art/elevations/`: a family hatchback

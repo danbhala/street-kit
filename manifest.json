@@ -187,7 +187,7 @@
             1024,
             696
           ],
-          "sha12": "a069887f9fa4",
+          "sha12": "b2dadbfbfcd9",
           "spritecook": {
             "asset_id": "2fd15fa5-4202-4e6d-8b26-15f7bc67523e",
             "prompt": "A row of Victorian British terraced houses in terracotta brick: white sash windows, front doors in different colours, grey slate roof with chimney stacks along the ridge. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
@@ -204,7 +204,7 @@
             1024,
             742
           ],
-          "sha12": "1e91fc1423e5",
+          "sha12": "3236a6f0f713",
           "spritecook": {
             "asset_id": "c9255fc0-a6d4-4a1c-93d6-e714fb4d03b2",
             "prompt": "The same row of Victorian British terraced houses, but with cream-rendered fronts and painted window surrounds: white sash windows, front doors in different colours, grey slate roof with chimney stacks along the ridge. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
@@ -286,7 +286,7 @@
             1024,
             285
           ],
-          "sha12": "8985dec4a815",
+          "sha12": "6b3577b2ee08",
           "spritecook": {
             "asset_id": "7154a941-23a0-411f-8954-49bc34230cb8",
             "prompt": "Distant British suburban rooftops and chimney pots as a silhouette band: grey slate roofs and terracotta brick chimney stacks with clay pots, slate and brick tones, no windows, no walls below the eaves. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
@@ -468,7 +468,7 @@
             512,
             214
           ],
-          "sha12": "ac5ed5354033",
+          "sha12": "d8a052d134e7",
           "spritecook": {
             "asset_id": "3bfc072d-45ab-4fac-9c69-91994def0da5",
             "prompt": "A low red-brick British front-garden wall with a coping course of rounded bricks on top, about knee high. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
@@ -510,7 +510,7 @@
             512,
             219
           ],
-          "sha12": "aa2eca2bfeee",
+          "sha12": "21bff08e0e97",
           "spritecook": {
             "asset_id": "93db7c1f-1b3d-4d6c-840c-83017691d1fe",
             "prompt": "A neatly clipped British privet hedge, about waist high, with a flat top and flat front face of small dense leaves. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
@@ -588,7 +588,7 @@
             512,
             343
           ],
-          "sha12": "cfad0b950820",
+          "sha12": "65e8074d4441",
           "spritecook": {
             "asset_id": "3335618d-f342-4de6-9e89-4355f4908d9c",
             "prompt": "A close-board wooden British garden fence: vertical overlapping feather-edge boards between grey concrete posts, a concrete gravel board at the bottom. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
@@ -708,17 +708,19 @@
           "mode": "fit_width",
           "width": 160,
           "anchor": "bottom-centre",
+          "same_size_as": "art/elevations/lamp_post_unlit.png",
           "size": [
             160,
-            638
+            617
           ],
-          "sha12": "ae448ee709ab",
+          "sha12": "cdc7ad874d85",
           "spritecook": {
             "asset_id": "e3720c65-bf8a-4857-aeb2-d855b6be2434",
             "prompt": "The same grey 1970s British concrete street lamp post as the reference, identical shape, but its sodium lantern switched on and glowing warm amber #FFB347, a soft amber glow just around the lantern. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
           }
         }
-      ]
+      ],
+      "notes": "SpriteCook painted the lit lamp about 3% taller than the unlit one; since 1.0.0 processing scales it to the unlit lamp's exact size (160x617), so the two swap in place."
     },
     {
       "id": "garage_row",
@@ -754,7 +756,7 @@
             1024,
             258
           ],
-          "sha12": "5f7f3b2d5a51",
+          "sha12": "8357140725c8",
           "spritecook": {
             "asset_id": "1c559a0e-f9d5-49db-9595-31cc82a4d6f3",
             "prompt": "A row of British lock-up garages: flat concrete roofs, up-and-over metal garage doors painted in faded colours (faded blue, faded green, faded brown, faded red), brick piers between them. One long straight horizontal run filling the whole width and continuing past both edges, evenly lit, no ends or corners. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
@@ -961,7 +963,7 @@
       "outputs": [
         {
           "variant": "hopscotch",
-          "raw": "decals_sheet",
+          "raw": "decals_sheet_hopscotch",
           "path": "art/decals/hopscotch.png",
           "mode": "slice",
           "count": 3,
@@ -972,10 +974,11 @@
             256,
             346
           ],
-          "sha12": "2c75f3782380",
+          "sha12": "e23dbbdcb25d",
           "spritecook": {
-            "asset_id": "939721dd-0657-43dd-a676-ea481a9369e4",
-            "prompt": "3 separate ground decals in a single row with wide empty space between them, not touching: a hopscotch grid drawn in thick pale yellow chalk lines with chalk numbers 1 to 8, drawn on a rectangular patch of grey paving slabs; a square cast-iron drain cover; a shallow rain puddle. Seen from directly above, flat, evenly lit, transparent background around each one, no shadows."
+            "asset_id": "ebd9d67a-56ee-445e-93c0-5c51f7a1c807",
+            "prompt": "Fix one mistake in the hopscotch grid and change nothing else: in the pair of side-by-side squares near the top, the right-hand square must show the chalk number 8 instead of a second 7 (the left-hand square keeps its 7), and the half-circle at the very top must show the chalk number 9 instead of 8. Every other chalk number (1, 2, 3, 4, 5, 6, 7) and every chalk line stays exactly where it is, in the same thick pale yellow chalk. Keep the paving slabs, the cast-iron drain cover and the puddle exactly as they are, same layout, positions and sizes. Seen from directly above, flat, evenly lit, transparent background around each one, no shadows.",
+            "edit_of": "939721dd-0657-43dd-a676-ea481a9369e4"
           }
         },
         {
@@ -1017,7 +1020,7 @@
           }
         }
       ],
-      "notes": "Repainted after the 0.3.0 sheet lost its white chalk hopscotch to background removal; the hopscotch now sits on a patch of paving slabs. Known flaw: the chalk numbers read 1, 2, 3, 4|5, 6, 7|7, 8 (the second 7 should be 8)."
+      "notes": "Repainted after the 0.3.0 sheet lost its white chalk hopscotch to background removal; the hopscotch now sits on a patch of paving slabs. In 1.0.0 the hopscotch was repainted as an edit of that sheet to fix its numbers (now 1, 2, 3, 4|5, 6, 7|8, 9; it used to repeat 7); the drain cover and puddle still come from the original sheet."
     },
     {
       "id": "gravel",

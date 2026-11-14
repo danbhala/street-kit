@@ -11,10 +11,13 @@ Each output in manifest.json that should be processed carries:
   "path":  where the processed file goes, e.g. art/elevations/terrace_row_brick.png
   "mode":  how to process it:
            fit_width     trim, then scale to "width" (elevations: houses, lamps, vans, trees)
-           strip         trim, keep the middle, cross-fade the ends so it tiles left to right, scale to "width"
+           strip         trim, keep the middle, join the ends along a matching cut so it tiles left to right, scale to "width"
            texture       square, cross-faded on both axes so it tiles, scale to "width"
            slice         the raw is a row of "count" items; this output takes item "index" (0-based), then fit_width
   "width": target width in px
+  "same_size_as": optional path of another output (processed earlier in the manifest); this one is
+           then scaled to exactly that size, for a variant that SpriteCook painted a little taller
+           or wider than its twin (the lit lamp post), so the two swap without a jump
 An output can instead be made from another kit file, with no SpriteCook download:
   "from":  the kit file it is made from, e.g. art/textures/lane_tarmac.png
   "mode":  plain_texture  the texture with its painted patches lifted out ("remove": list of
@@ -57,14 +60,95 @@ def _crossfade_x(a: np.ndarray, blend: float) -> np.ndarray:
     return np.concatenate([head, a[:, n:-n]], axis=1)
 
 
+def _seam_path(cost: np.ndarray) -> tuple:
+    """The cheapest top-to-bottom path through [cost], one column per row, moving at most one
+    column between rows (dynamic programming). Returns (total cost, column for each row)."""
+    h, n = cost.shape
+    acc = cost.copy()
+    step = np.zeros((h, n), dtype=np.int64)
+    for y in range(1, h):
+        prev = np.stack([np.r_[1e18, acc[y - 1, :-1]], acc[y - 1], np.r_[acc[y - 1, 1:], 1e18]])
+        step[y] = prev.argmin(0) - 1
+        acc[y] += prev.min(0)
+    seam = np.empty(h, dtype=np.int64)
+    seam[-1] = int(acc[-1].argmin())
+    for y in range(h - 1, 0, -1):
+        seam[y - 1] = seam[y] + step[y, seam[y]]
+    return float(acc[-1].min()), seam
+
+
+def _seam_cost(tail: np.ndarray, head: np.ndarray) -> np.ndarray:
+    n = tail.shape[1]
+    alpha = np.maximum(tail[..., 3:], head[..., 3:]) / 255.0
+    cost = (np.abs(tail[..., :3] - head[..., :3]) * alpha).sum(2) + np.abs(tail[..., 3] - head[..., 3])
+    lo, hi = int(n * 0.2), int(n * 0.8)  # keep the cut away from the tile edges
+    cost[:, :lo] = cost[:, hi:] = 1e9
+    return cost
+
+
+def _seam_x(a: np.ndarray, blend: float, feather: int = 3) -> np.ndarray:
+    """Like _crossfade_x, but instead of fading the two ends through each other (which leaves
+    a see-through ghost of both wherever they differ, such as two windows or chimneys), it cuts
+    from one to the other along the path where they already match best, softened over
+    [feather] px either side. A broad tone difference across the cut (say one roof a shade
+    darker than the other) is eased out over the overlap so it doesn't show as a step."""
+    n = max(1, int(a.shape[1] * blend))
+    tail, head = a[:, -n:], a[:, :n]
+    _, seam = _seam_path(_seam_cost(tail, head))
+    x = np.arange(n)[None, :]
+    w = np.clip((x - seam[:, None] + feather) / (2.0 * feather + 1), 0.0, 1.0)[..., None]
+    # tone: the slow part of head - tail where both are painted, split half each side of the
+    # cut and faded to nothing at the overlap's outer edges, which must stay as painted
+    both = (np.minimum(tail[..., 3], head[..., 3]) > 200).astype(np.float64)
+    diff = (head[..., :3] - tail[..., :3]) * both[..., None]
+    soft = _blur(diff, 12) / np.maximum(_blur(both, 12), 1e-3)[..., None]
+    soft *= (_blur(both, 12) > 0.5)[..., None]
+    toward = np.clip(x / np.maximum(seam[:, None], 1), 0, 1)
+    away = np.clip((n - 1 - x) / np.maximum(n - 1 - seam[:, None], 1), 0, 1)
+    tail_fix, head_fix = tail.copy(), head.copy()
+    tail_fix[..., :3] += soft * (0.5 * toward)[..., None]
+    head_fix[..., :3] -= soft * (0.5 * away)[..., None]
+    joined = tail_fix * (1.0 - w) + head_fix * w
+    return np.concatenate([joined, a[:, n:-n]], axis=1)
+
+
+def _blur(x: np.ndarray, radius: float) -> np.ndarray:
+    """Gaussian blur (sigma [radius]) along both axes, edges clamped."""
+    r = int(3 * radius)
+    k = np.exp(-0.5 * (np.arange(-r, r + 1) / radius) ** 2)
+    k /= k.sum()
+    out = x.astype(np.float64)
+    for axis in (0, 1):
+        pad = [(0, 0)] * out.ndim
+        pad[axis] = (r, r)
+        p = np.pad(out, pad, mode="edge")
+        out = sum(k[i] * np.take(p, np.arange(i, i + out.shape[axis]), axis=axis) for i in range(2 * r + 1))
+    return out
+
+
 def strip(im: Image.Image, width: int, blend: float = 0.12) -> Image.Image:
-    """Tiles left to right: keeps the middle 80% (generated ends are often rounded off),
-    then cross-fades the last [blend] into the first so the seam disappears."""
+    """Tiles left to right: keeps about the middle 80% (generated ends are often rounded off),
+    then joins the last [blend] onto the first along a cut where they match (see _seam_x).
+    The window slides left or right and stretches by up to 4% to where the two ends match
+    best, so the cut falls between doors and windows rather than through them and repeating
+    things (garage doors, fence panels) keep their spacing across the join. The output size
+    is always that of the plain middle 80%, so a better join never changes the file's size."""
     im = trim(im)
     inset = int(im.width * 0.1)
-    im = im.crop((inset, 0, im.width - inset, im.height))
-    out = _crossfade_x(np.asarray(im).astype(np.float32), blend)
-    return scale_to_width(Image.fromarray(out.clip(0, 255).astype(np.uint8), "RGBA"), width)
+    keep0 = im.width - 2 * inset
+    height = max(1, round(im.height * width / (keep0 - int(keep0 * blend))))
+    a = np.asarray(im).astype(np.float32)
+    best = None
+    for keep in range(int(keep0 * 0.96), min(im.width, int(keep0 * 1.04)) + 1, max(1, keep0 // 100)):
+        n = max(1, int(keep * blend))
+        for x0 in range(0, im.width - keep + 1, max(1, inset // 16)):
+            win = a[:, x0:x0 + keep]
+            cost, _ = _seam_path(_seam_cost(win[:, -n:], win[:, :n]))
+            if best is None or cost < best[0]:
+                best = (cost, x0, keep)
+    _, x0, keep = best
+    out = _seam_x(a[:, x0:x0 + keep], blend)
+    return Image.fromarray(out.clip(0, 255).astype(np.uint8), "RGBA").resize((width, height), Image.LANCZOS)
 
 
 def texture(im: Image.Image, width: int, blend: float = 0.12) -> Image.Image:
@@ -277,6 +361,9 @@ def process(raw_dir: Path) -> None:
                 res = fit_width(slice_row(im, int(out["count"]), int(out["index"])), width)
             else:
                 sys.exit(f"{asset['id']}: unknown mode {mode!r}")
+            if out.get("same_size_as"):
+                twin = next(o for a in m["assets"] for o in a.get("outputs", []) if o["path"] == out["same_size_as"])
+                res = res.resize(tuple(twin["size"]), Image.LANCZOS)
             dest = ROOT / out["path"]
             dest.parent.mkdir(parents=True, exist_ok=True)
             res.save(dest, optimize=True)
