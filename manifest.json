@@ -1229,6 +1229,159 @@
       "notes": "Cut out of lane_tarmac.png (no new SpriteCook run), at the texture's scale: 512 px of tarmac is 4 of Tip the Can's tiles. Lay them on lane_tarmac_plain.png at any angle."
     },
     {
+      "id": "street_furniture",
+      "name": "Street furniture: pillar box, BT cabinet, litter bin, wheelie bin",
+      "kind": "elevation",
+      "status": "planned",
+      "sketch": "lamp",
+      "variants": [
+        "pillar box",
+        "BT cabinet",
+        "litter bin",
+        "wheelie bin"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Hiding spots and street dressing",
+        "kerby": "Pavement props along the street"
+      },
+      "spritecook": {
+        "prompt": "4 separate pieces of British street furniture from the 1990s in a single row with wide empty space between them, not touching, all standing upright at the same scale: a red cylindrical pillar post box with a black base and a domed cap, no lettering; a green BT street cabinet, a tall flat-fronted metal box with double doors; a black round litter bin on a short post; a dark green wheelie bin with its lid shut, two wheels at the bottom, no text. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+      },
+      "outputs": [
+        {
+          "variant": "pillar box",
+          "raw": "furniture_sheet",
+          "path": "art/elevations/pillar_box.png",
+          "mode": "slice",
+          "width": 128,
+          "anchor": "bottom-centre",
+          "count": 4,
+          "index": 0
+        },
+        {
+          "variant": "BT cabinet",
+          "raw": "furniture_sheet",
+          "path": "art/elevations/bt_cabinet.png",
+          "mode": "slice",
+          "width": 192,
+          "anchor": "bottom-centre",
+          "count": 4,
+          "index": 1
+        },
+        {
+          "variant": "litter bin",
+          "raw": "furniture_sheet",
+          "path": "art/elevations/litter_bin.png",
+          "mode": "slice",
+          "width": 112,
+          "anchor": "bottom-centre",
+          "count": 4,
+          "index": 2
+        },
+        {
+          "variant": "wheelie bin",
+          "raw": "furniture_sheet",
+          "path": "art/elevations/wheelie_bin.png",
+          "mode": "slice",
+          "width": 128,
+          "anchor": "bottom-centre",
+          "count": 4,
+          "index": 3
+        }
+      ]
+    },
+    {
+      "id": "tall_furniture",
+      "name": "Tall street furniture: phone box, bus stop, telegraph pole",
+      "kind": "elevation",
+      "status": "planned",
+      "sketch": "lamp",
+      "variants": [
+        "phone box",
+        "bus stop",
+        "telegraph pole"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Landmarks on the street map and hiding spots",
+        "kerby": "Street props and bank-shot targets"
+      },
+      "spritecook": {
+        "prompt": "3 separate tall pieces of British street furniture in a single row with wide empty space between them, not touching, all standing upright at the same scale: a red cast-iron telephone box with a domed roof and many small glass panes, blank crown panels with no words or text; a bus-stop pole with a plain round flag at the top and a small timetable case, no words or text; a tall dark wooden telegraph pole with a short crossarm, insulators and a few wires cut short at the top. Seen straight-on from the street, flat front elevation, not angled. Only this, no ground, no pavement, no people, transparent background."
+      },
+      "outputs": [
+        {
+          "variant": "phone box",
+          "raw": "tall_sheet",
+          "path": "art/elevations/phone_box.png",
+          "mode": "slice",
+          "width": 192,
+          "anchor": "bottom-centre",
+          "count": 3,
+          "index": 0
+        },
+        {
+          "variant": "bus stop",
+          "raw": "tall_sheet",
+          "path": "art/elevations/bus_stop.png",
+          "mode": "slice",
+          "width": 96,
+          "anchor": "bottom-centre",
+          "count": 3,
+          "index": 1
+        },
+        {
+          "variant": "telegraph pole",
+          "raw": "tall_sheet",
+          "path": "art/elevations/telegraph_pole.png",
+          "mode": "slice",
+          "width": 160,
+          "anchor": "bottom-centre",
+          "count": 3,
+          "index": 2
+        }
+      ]
+    },
+    {
+      "id": "paving_slabs",
+      "name": "Paving slabs",
+      "kind": "texture",
+      "status": "planned",
+      "sketch": "decals",
+      "variants": [
+        "tileable"
+      ],
+      "used_by": [
+        "tip-the-can",
+        "kerby"
+      ],
+      "uses": {
+        "tip-the-can": "Pavement ground tiles",
+        "kerby": "The pavement strip above the kerb, foreshortened"
+      },
+      "spritecook": {
+        "prompt": "Seamless tileable top-down texture of a British pavement of square grey concrete paving slabs, about 4 by 4 slabs, straight thin joints, slightly varied weathered grey with faint stains and a few hairline cracks, no objects, no kerb, no leaves. Seen from directly above, flat, evenly lit, no shadows.",
+        "mode": "texture"
+      },
+      "outputs": [
+        {
+          "variant": "tileable",
+          "raw": "paving_slabs",
+          "path": "art/textures/paving_slabs.png",
+          "mode": "seamless",
+          "width": 512,
+          "anchor": null
+        }
+      ]
+    },
+    {
       "id": "fonts",
       "name": "Fredoka and Cabin Sketch Bold",
       "kind": "font",

@@ -13,6 +13,8 @@ Each output in manifest.json that should be processed carries:
            fit_width     trim, then scale to "width" (elevations: houses, lamps, vans, trees)
            strip         trim, keep the middle, join the ends along a matching cut so it tiles left to right, scale to "width"
            texture       square, cross-faded on both axes so it tiles, scale to "width"
+           seamless      square, scale to "width"; for a raw SpriteCook already made seamless
+                         (mode="texture"), where a cross-fade would double up regular joints
            slice         the raw is a row of "count" items; this output takes item "index" (0-based), then fit_width
   "width": target width in px
   "same_size_as": optional path of another output (processed earlier in the manifest); this one is
@@ -357,6 +359,10 @@ def process(raw_dir: Path) -> None:
                 res = strip(im, width)
             elif mode == "texture":
                 res = texture(im, width)
+            elif mode == "seamless":
+                side = min(im.size)
+                res = im.crop(((im.width - side) // 2, (im.height - side) // 2, (im.width + side) // 2,
+                               (im.height + side) // 2)).resize((width, width), Image.LANCZOS)
             elif mode == "slice":
                 res = fit_width(slice_row(im, int(out["count"]), int(out["index"])), width)
             else:
