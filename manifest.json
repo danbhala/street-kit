@@ -365,6 +365,76 @@
       "notes": "Seen from about 20 degrees down, so it suits Kerby's camera; Tip the Can has no use for it. The highlight sits just under the top edge, so Kerby draws its own hit-zone line."
     },
     {
+      "id": "kerb_concrete",
+      "name": "Concrete kerb section",
+      "kind": "elevation",
+      "status": "shipped",
+      "sketch": "wall",
+      "variants": [
+        "tileable"
+      ],
+      "used_by": [
+        "kerby"
+      ],
+      "uses": {
+        "kerby": "Plainer kerb for variety along the gameplay strip"
+      },
+      "since": "0.8.0",
+      "spritecook": {
+        "asset_id": "f8fa8d5b-6d51-4056-a4a0-c80eda04e937",
+        "prompt": "The same straight section of kerb as the reference image, same layout and proportions (a thin strip of paving slabs on top, the kerb, a narrow strip of dark tarmac gutter at the bottom), but made of British precast concrete kerb units instead of granite: smoother, paler, even grey-cream concrete with thin straight joints between short units, a softer more rounded top front edge with a gentler highlight along it, the vertical front face in soft shade. Runs straight across the whole frame, horizontal, ends cut square, no objects, no people.",
+        "edit_of": "9f885e14-aa70-4892-bde7-c1e88470e20e"
+      },
+      "outputs": [
+        {
+          "variant": "tileable",
+          "path": "art/elevations/kerb_concrete.png",
+          "size": [
+            512,
+            160
+          ],
+          "anchor": "bottom-left",
+          "sha12": "46b2f8a16623"
+        }
+      ],
+      "notes": "An edit of kerb_granite with the same layout: in a 512 px strip the arris is at row 64 and the face foot at row 125 (granite: 66 and 129). Paler, with a softer top edge. Seen about 20 degrees down, like the granite kerb."
+    },
+    {
+      "id": "kerb_dropped",
+      "name": "Dropped kerb at a driveway",
+      "kind": "elevation",
+      "status": "shipped",
+      "sketch": "wall",
+      "variants": [
+        "tileable"
+      ],
+      "used_by": [
+        "kerby"
+      ],
+      "uses": {
+        "kerby": "Driveway dead zones on the gameplay strip"
+      },
+      "since": "0.8.0",
+      "spritecook": {
+        "asset_id": "a99367f6-8989-4915-a99c-47de7bd1046e",
+        "prompt": "The same straight section of kerb as the reference image, same layout, but a British dropped kerb at a driveway: the kerb stones are lowered almost flush with the road so only a very low sliver of front face shows, the paving slabs slope gently down to it, a faint highlight along the low top edge, a narrow strip of dark tarmac gutter at the bottom. Runs straight across the whole frame, horizontal, ends cut square, no ramps at the ends, no objects, no people.",
+        "edit_of": "9f885e14-aa70-4892-bde7-c1e88470e20e"
+      },
+      "outputs": [
+        {
+          "variant": "tileable",
+          "path": "art/elevations/kerb_dropped.png",
+          "size": [
+            512,
+            168
+          ],
+          "anchor": "bottom-left",
+          "sha12": "bf8b4d5f9254"
+        }
+      ],
+      "notes": "An edit of kerb_granite, lowered almost flush with the road. No ramps at the ends, so it tiles; add ramps in code if a game needs them."
+    },
+    {
       "id": "garden_wall",
       "name": "Brick garden wall with pillar",
       "kind": "elevation",
@@ -793,6 +863,38 @@
       ]
     },
     {
+      "id": "car_escort",
+      "name": "Family hatchback, side elevation",
+      "kind": "elevation",
+      "status": "shipped",
+      "sketch": "van",
+      "variants": [],
+      "used_by": [
+        "kerby"
+      ],
+      "uses": {
+        "kerby": "The car that crosses the road side-on (CAR!)"
+      },
+      "since": "0.8.0",
+      "spritecook": {
+        "asset_id": "3535f05e-1af8-46ba-88a8-4fcb3293c927",
+        "prompt": "One 1990s British family hatchback car, a generic Ford Escort look-alike with no badges, seen exactly side-on facing right: faded cherry-red paint, black plastic bumpers and trims, grey hubcaps, windows showing a hint of the empty seats inside, no driver, no number plate, no text, no lettering anywhere. Side elevation, seen straight-on from the pavement, flat, not angled. Only this car, no ground, no road, no people, no cast shadow, transparent background."
+      },
+      "outputs": [
+        {
+          "variant": null,
+          "path": "art/elevations/car_escort.png",
+          "size": [
+            520,
+            217
+          ],
+          "anchor": "bottom-centre",
+          "sha12": "b41a3036b092"
+        }
+      ],
+      "notes": "A generic Escort look-alike facing right, no badges or plate. Muted 12% in processing for Kerby's saturation budget. Tip the Can would need its own top view of a car."
+    },
+    {
       "id": "corner_shop",
       "name": "Corner shop front",
       "kind": "elevation",
@@ -1162,6 +1264,36 @@
         }
       ],
       "notes": "SIL Open Font License; the licence files ship with the fonts."
+    },
+    {
+      "id": "bangers_font",
+      "name": "Bangers",
+      "kind": "font",
+      "status": "shipped",
+      "sketch": "shop",
+      "variants": [],
+      "used_by": [
+        "kerby"
+      ],
+      "uses": {
+        "kerby": "CLACK!, CAR! and the title logo"
+      },
+      "since": "0.8.0",
+      "spritecook": {
+        "asset_id": null,
+        "prompt": null
+      },
+      "outputs": [
+        {
+          "path": "fonts/Bangers-Regular.ttf",
+          "sha12": "4160a7311de9"
+        },
+        {
+          "path": "fonts/OFL-Bangers.txt",
+          "sha12": "630dd5a307c0"
+        }
+      ],
+      "notes": "Comic display face from google/fonts, SIL Open Font License; the licence file ships with the font."
     }
   ]
 }

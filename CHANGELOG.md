@@ -9,6 +9,16 @@ Versioning for art:
 - **Minor**: new assets added. Safe to upgrade.
 - **Patch**: an existing asset repainted with the same file name, size and anchor. Safe to upgrade.
 
+## [0.8.0]
+
+- Three paintings from Kerby's second SpriteCook batch, in `art/elevations/`: a family hatchback
+  seen side-on facing right (`car_escort.png`, 520x217, no badges or plate), and two kerb strips
+  painted as edits of the granite kerb with the same layout, so they line up with it:
+  concrete (`kerb_concrete.png`, 512x160) and a dropped kerb for driveways (`kerb_dropped.png`,
+  512x168). Both kerbs tile left to right.
+- Font: Bangers, a comic display face, with its OFL licence (`fonts/Bangers-Regular.ttf`).
+- Kerby uses all four. Nothing existing changes.
+
 ## [0.7.0]
 
 - The back-lane tarmac no longer has to repeat its patches. New `art/textures/lane_tarmac_plain.png`
